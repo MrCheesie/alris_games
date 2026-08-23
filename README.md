@@ -14,3 +14,7 @@ If you want to contribute to this repository, you can do so by:
 
 ## Game engine
 The games are currently made in lua using the love2d framework and exported to the web with `love.js`.
+
+## Site
+
+The site is hosted with GitHub Pages and is live [here](https://mrcheesie.github.io/alris_games/). Shortened url can be found [here](https://tinyurl.com/alris-games).
