@@ -1,0 +1,74 @@
+/*Font import*/
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+body {
+    font-family: "JetBrains Mono", monospace;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    border-radius: 25px;
+    padding: 10px;
+    width: 75%;
+    justify-content: center;
+    font-family: 'JetBrains Mono';
+
+}
+button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+    width: 100%;
+    justify-content: center;
+    font-family: 'JetBrains Mono';
+    background-color: orange;
+    color: #f1f1f1;
+    font-weight: bolder;
+}
+#qrcode {
+    margin-top: 20px;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-family: "JetBrains Mono", monospace;
+    z-index: 1000;
+}
+
+nav {
+    background-color: #444;
+    overflow: hidden;
+    padding: 0;
+    z-index: 1000;
+}
+
+/* Sticky Footer at absolute bottom */
+
+#buh {
+    font-family: "JetBrains Mono";
+    color: powderblue;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-family: "JetBrains Mono", monospace;
+    z-index: 1000;
+    height: 70px;
+}

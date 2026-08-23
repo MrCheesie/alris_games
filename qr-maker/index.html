@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> <!-- Include your custom styles here -->
+    <title>QR Code Generator</title>
+    <!-- Include QRCode.js Library via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+
+    <h2>QR Code Generator</h2>
+    <input type="text" id="qr-text" placeholder="Enter text or URL" value="https://mrcheesie.github.io/alris_games/">
+    <button onclick="generateQR()">Generate QR Code</button>
+
+    <!-- Container where the QR Code will render -->
+    <div id="qrcode"></div>
+
+    <script src="app.js"></script>
+
+    <footer class="footer">
+        <p id="copyRight" style="font-family: 'JetBrains Mono';">&copy; 2026 Alris Dhanwani. All rights reserved.</p>
+        <a href="../index.html" id="buh">Return to homepage</a>
+    </footer>
+</body>
+</html>
