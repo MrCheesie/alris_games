@@ -13,7 +13,7 @@ If you want to contribute to this repository, you can do so by:
 5. Creating a pull request
 
 ## Game engine
-The games are currently made in lua using the love2d framework and exported to the web with `love.js`.
+The games are currently made in lua using the love2d framework and exported to the web with `love.js`. Tools are made with vanilla JavaScript, HTML and CSS.
 
 ## Site
 
