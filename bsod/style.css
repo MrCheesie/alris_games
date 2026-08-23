@@ -1,0 +1,64 @@
+/*Font import*/
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #1a1a1a;
+  padding: 30px;
+  font-family: sans-serif;
+}
+
+.grid-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.bsod-trigger {
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.bsod-trigger:hover {
+  transform: scale(1.03);
+}
+
+/* This targets the image ONLY when it goes into native fullscreen mode */
+img:fullscreen {
+  width: 100vw;
+  height: 100vh;
+  object-fit: fill; /* Ensures the fake BSOD stretches perfectly to all screen corners */
+  background-color: #000; /* Fallback color */
+}
+/* Sticky Footer at absolute bottom */
+
+#buh {
+    font-family: "JetBrains Mono";
+    color: powderblue;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-family: "JetBrains Mono", monospace;
+    z-index: 1000;
+    height: 70px;
+}
