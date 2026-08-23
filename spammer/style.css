@@ -1,0 +1,99 @@
+/*Font import*/
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+.container {
+
+    margin: 15px;
+    background-color: #f1f1f1;
+}
+
+div {
+    display: flexbox;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+p {
+    font-family: 'JetBrains Mono';
+    font-size: medium;
+}
+
+input {
+    border-color: slategray;
+    background-color: gainsboro;
+    border-radius: 5px;
+    font-family: 'JetBrains Mono';
+}
+
+label {
+    font-family: 'JetBrains Mono';
+    font-size: medium;
+    margin-right: 10px;
+}
+
+#textInput {
+    width: 500px;
+    min-width: 400px;
+    max-width: 1000px;
+    max-height: 50px;
+    font-family: 'JetBrains Mono';
+}
+
+button {
+    width: 100px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: -moz-grabbing;
+    font-family: 'JetBrains Mono';
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: medium;
+}
+
+button:hover {
+    background-color: #45a050;
+}
+
+/* Ensure body takes full height */
+html, body {
+  height: 100%;
+}
+
+/* Expand content area to fill remaining space */
+.content-wrap {
+  flex: 1;
+  padding: 20px;
+}
+
+
+/* Container padding ensures the footer does not cover page content */
+.page-container {
+    padding-bottom: 60px; /* Adjust based on footer height */
+}
+
+/* Sticky Footer at absolute bottom */
+
+#buh {
+    font-family: 'JetBrains Mono';
+    color: powderblue;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-family: 'JetBrains Mono', monospace;
+    z-index: 1000;
+    height: 70px;
+}
