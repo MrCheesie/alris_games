@@ -1,0 +1,23 @@
+/*Font import*/
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+/* Sticky Footer at absolute bottom */
+
+.buh {
+    font-family: 'JetBrains Mono';
+    color: powderblue;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-family: 'JetBrains Mono', monospace;
+    z-index: 1000;
+    height: 70px;
+}
