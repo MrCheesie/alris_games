@@ -31,6 +31,7 @@ body {
   align-items: center;
   background: var(--bg-gradient);
   background-size: 400% 400%;
+  font-family: 'JetBrains Mono';
   animation: gradientBG 15s ease infinite;
   color: var(--text-color);
   /* FIX 1: Allow vertical scrolling on mobile */
@@ -89,6 +90,11 @@ body {
   line-height: 1.6;
 }
 
+h2 {
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
 /* Interactive Glowing Button */
 .button {
   display: inline-block;
@@ -130,11 +136,6 @@ body {
   from { filter: drop-shadow(0 0 2px rgba(24, 168, 245)); }
   to { filter: drop-shadow(0 0 12px rgba(24, 168, 245)); }
 }
-
-/*footer*/
-
-
-/* Font imports */
 
 
 /* Sticky Footer at absolute bottom */
