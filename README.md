@@ -1,6 +1,6 @@
 # Alris Games
 
-This is the repository for alris' games, and initiative to provide games and tools for MGIS students.
+This is the repository for alris' games, an initiative to provide games and tools for MGIS students.
 
 ## How to contribute
 
