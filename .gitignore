@@ -3,3 +3,8 @@
 _MACOSX/
 .vscode/
 dev_resources.md
+
+doc-editor-src/node_modules
+doc-editor-src/package.json
+doc-editor-src/package-lock.json
+doc-editor-src/public
