@@ -54,3 +54,20 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
+- - -
+
+## Roadmap
+
+```mermaid
+kanban
+  Todo
+    [create the bomb-eater game]
+    [create docs for the website such as how-to guide, reccomended browsers, etc.]
+  In progress
+    [fix doc editor]
+  Done
+    [Create random group generator]
+    [increase support for mobile]
+    [Add the cute mascot on front page]
+```
+
