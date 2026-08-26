@@ -1,0 +1,78 @@
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+
+/* cneter div */
+#center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: 'JetBrains Mono', monospace;
+    flex-direction: column;
+}
+
+/* Header */
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    z-index: 100
+}
+
+/* Header */
+
+button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+    font-family: 'JetBrains Mono';
+    border-radius: 5px;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+button:hover {
+    background-color: #555;
+    scale: 85%;
+}
+
+/* Main Content */
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-family: 'JetBrains Mono';
+}
+
+p {
+    font-size: 16px;
+}
+
+/* Sticky Footer at absolute bottom */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-family: 'JetBrains Mono', monospace;
+    z-index: 1000;
+    height: 70px;
+}
+
+#buh {
+    font-family: 'JetBrains Mono';
+    color: powderblue;
+}
