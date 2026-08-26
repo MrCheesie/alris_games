@@ -1,0 +1,51 @@
+/**
+ * Participant Counter Component Styles
+ * Handles inline numbering for each participant entry
+ * Numbers appear as buttons identical to delete buttons but on the left side
+ * @author Simeon Tsvetanov
+ */
+
+.participant-number {
+  cursor: default;
+  padding: calc(var(--spacing-xs) * 0.5);
+  width: clamp(18px, 2.5vw, 24px);
+  height: clamp(18px, 2.5vw, 24px);
+  color: var(--text-secondary-dark);
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: clamp(14px, 1.8vw, 18px);
+  line-height: 1;
+  transition: all 0.2s ease;
+  opacity: 0.4;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius);
+  margin: 0 calc(var(--spacing-xs) * 1) 0 0;
+  visibility: hidden;
+}
+
+.participant-number:hover {
+  opacity: 0.8;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Show number ONLY when input has content - same logic as delete button */
+.participant-number {
+  visibility: hidden;
+}
+
+.name-item.has-content .participant-number {
+  visibility: visible;
+}
+
+/* Mobile optimizations - match delete button sizing exactly */
+@media (max-width: 768px) {
+  .participant-number {
+    width: clamp(22px, 3.2vw, 30px);
+    height: clamp(22px, 3.2vw, 30px);
+    font-size: clamp(16px, 2.3vw, 22px);
+  }
+}

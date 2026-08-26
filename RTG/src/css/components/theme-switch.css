@@ -1,0 +1,49 @@
+/**
+ * Theme Switch Component Styles
+ * Handles dark/light theme toggle button with Material Icons
+ * @author Simeon Tsvetanov
+ */
+
+#theme-switch {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.theme-switch {
+  position: relative;
+  cursor: pointer;
+  font-size: clamp(32px, 5vw, 48px); /* Match logo size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-speed); /* Remove background, add scale transition */
+}
+
+.theme-switch:hover {
+  transform: scale(1.1); /* Match logo hover effect */
+}
+
+.theme-switch__toggle {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+/* Use Material Icons for theme indicators */
+.theme-switch:after {
+  font-family: "Material Icons";
+  content: "light_mode"; /* Sun icon in dark theme */
+  color: #fff;
+  font-size: clamp(32px, 5vw, 48px); /* Match logo size */
+  transition: var(--transition-speed);
+}
+
+/* Light theme - show moon icon */
+body[data-theme="light"] .theme-switch:after {
+  content: "dark_mode"; /* Moon icon in light theme */
+  color: #424242;
+}

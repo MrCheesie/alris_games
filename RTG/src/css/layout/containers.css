@@ -1,0 +1,89 @@
+/**
+ * Container Layout Styles
+ * Handles container structures, responsive grids, and mobile optimizations
+ * Includes teams container grid and actions layout
+ * @author Simeon Tsvetanov
+ */
+
+/* Container styles */
+.main-input {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  background-color: var(--bg-secondary-dark);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.input-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  position: relative;
+}
+
+.team-count-container {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  align-items: center;
+}
+
+/* Mobile portrait optimizations */
+@media (max-width: 768px) and (orientation: portrait) {
+  .main-input {
+    padding: var(--spacing-sm);
+    gap: var(--spacing-xs);
+  }
+
+  .team-count-container {
+    gap: var(--spacing-xs);
+  }
+}
+
+/* Mobile landscape optimizations */
+@media (max-height: 500px) and (orientation: landscape) {
+  .main-input {
+    flex-direction: row;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm);
+  }
+
+  .input-container {
+    flex: 2;
+  }
+
+  .team-count-container {
+    flex: 1;
+    justify-content: center;
+    min-width: 200px;
+  }
+}
+
+/* Teams container responsive grid */
+.teams-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(200px, 25vw, 300px), 1fr)
+  );
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+  width: 100%;
+  padding: 0;
+}
+
+.actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  padding: var(--spacing-sm) 0;
+  flex-wrap: wrap;
+}
