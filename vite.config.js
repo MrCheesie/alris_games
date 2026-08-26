@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-    // Tell Vite to use relative paths for asset URLs
-    base: './',
+    // Tell Vite your site is hosted under the repo subfolder:
+    base: '/alris_games/',
 });
