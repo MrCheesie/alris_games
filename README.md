@@ -64,7 +64,6 @@ kanban
     [create the bomb-eater game]
     [create docs for the website such as how-to guide, reccomended browsers, etc.]
   In progress
-    [fix doc editor]
   Done
     [Create random group generator]
     [increase support for mobile]
