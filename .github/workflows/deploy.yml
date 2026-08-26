@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"] # Change to "master" if your main branch is named master
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -29,13 +29,13 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies & Build
+      - name: Install & Build
         run: |
           cd doc-editor-src
           npm ci
           npx vite build
 
-      - name: Upload dist artifact
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './doc-editor-src/dist'
