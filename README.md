@@ -26,11 +26,9 @@ The site is hosted with GitHub Pages and is live [here](https://mrcheesie.github
 ## Acknowledgments
 Thanks to [EmbedPDF](https://www.embedpdf.com/) for providing the PDF viewer and annotater.
 
-Thanks to [SuperDoc](https://www.superdoc.dev/) for providing the Document editor.
-
 Thanks to [No as a service](https://github.com/hotheadhacker/no-as-a-service) for providing the API behind the no-saying website.
 
-Thanks to [SimeonTsvetanov](https://github.com/SimeonTsvetanov/Random-Team-Generator/) for the random group generator.
+Thanks to [Simeon Tsvetanov](https://github.com/SimeonTsvetanov/Random-Team-Generator/) for the random group generator.
 
 *This site is not affiliated with or sponsored by any of these services.*
 
@@ -61,10 +59,10 @@ limitations under the License.
 ```mermaid
 kanban
   Todo
-    [create the bomb-eater game]
     [create docs for the website such as how-to guide, reccomended browsers, etc.]
   In progress
   Done
+    [create the bomb-eater game]
     [Create random group generator]
     [increase support for mobile]
     [Add the cute mascot on front page]
