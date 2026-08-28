@@ -19,7 +19,7 @@ div {
 }
 
 p {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'JetBrains Mono';
     font-size: medium;
 }
 
@@ -27,21 +27,21 @@ input {
     border-color: slategray;
     background-color: gainsboro;
     border-radius: 5px;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'JetBrains Mono';
 }
 
 label {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'JetBrains Mono';
     font-size: medium;
     margin-right: 10px;
 }
 
 #textInput {
-    width: 90%;
+    width: 70%;
     min-width: 200px;
     max-width: 1000px;
     max-height: 50px;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'JetBrains Mono';
 }
 
 button {
