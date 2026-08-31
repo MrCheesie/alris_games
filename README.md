@@ -61,10 +61,10 @@ kanban
   Todo
     [create docs for the website such as how-to guide, reccomended browsers, etc.]
   In progress
+    [create tag game]
   Done
     [create the bomb-eater game]
     [Create random group generator]
     [increase support for mobile]
     [Add the cute mascot on front page]
 ```
-
