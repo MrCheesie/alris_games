@@ -23,6 +23,9 @@ The games are currently made in lua using the love2d framework and exported to t
 
 The site is hosted with GitHub Pages and is live [here](https://mrcheesie.github.io/alris_games/). Shortened url can be found [here](https://tinyurl.com/alris-games).
 
+## Docs
+Documentation for games and tools is in progress on can be found in the [docs folder](docs/).
+
 ## Acknowledgments
 Thanks to [EmbedPDF](https://www.embedpdf.com/) for providing the PDF viewer and annotater.
 
@@ -59,12 +62,14 @@ limitations under the License.
 ```mermaid
 kanban
   Todo
-    [create docs for the website such as how-to guide, reccomended browsers, etc.]
   In progress
-    [create tag game]
+    [create docs for the website such as how-to guide, reccomended browsers, etc.]
+    [create a way to make and submit blogs]
+  
   Done
+    [create tag game]
     [create the bomb-eater game]
     [Create random group generator]
-    [increase support for mobile]
+    [Increase support for mobile]
     [Add the cute mascot on front page]
 ```
