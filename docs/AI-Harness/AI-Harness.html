@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AI Harness Docs</title>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+            h1,
+            p,
+            li,
+            h2,
+            em {
+                font-family: "JetBrains Mono", monospace;
+            }
+
+            img {
+                max-height: 300px;
+                margin-top: 10px;
+            }
+
+            code {
+                background-color: #adadad;
+                border-radius: 3px;
+                margin-left: 20px;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="docs-for-ai-harness">Docs for AI harness</h1>
+        <p>
+            <a href="https://mrcheesie.github.io/alris_games/AI-harness/">AI Harness</a>
+        </p>
+        <h2 id="setting-up-an-api-key">Setting up an API key:</h2>
+        <p>
+            <em>This next section will guide you through setting up the AI
+                harness with google’s API.</em>
+        </p>
+        <ol type="1">
+            <li>
+                <p>
+                    Go to settings (Gear icon on the top right of the screen)
+                    <a href="b4settings.png">
+                    <br><img
+                        src="b4settings.png"
+                        alt="Going to the settings panel"
+                    /></a>
+                </p>
+            </li>
+            <li>
+                <p>
+                    Then Change the provider to Google and change the endpoint
+                    to
+                </p>
+            </li>
+        </ol>
+        <pre
+            class="api-url"
+        ><code>https://generativelanguage.googleapis.com/v1beta/openai/</code></pre>
+        <ol start="3" type="1">
+            <li>
+                Navigate to
+                <a href="https://aistudio.google.com/api-keys"
+                    >Google AI Studio</a
+                >
+                and get your free API key from there.
+                <a href="api.png">
+                <br><img
+                    src="api.png"
+                    alt="Copying the API key from Google AI Studio"
+                />
+                </a>
+            </li>
+            <li>
+                Paste the API key into the AI harness.
+                <a href="settings.png">
+                <br><img
+                    src="settings.png"
+                    alt="Changing provider settings and pasting API key"
+                /></a>
+            </li>
+            <li>Close settings</li>
+            <li>
+                Select a model from the model picker in the top left corner (the
+                Flash models are free)
+            </li>
+            <li>Enjoy your chat</li>
+        </ol>
+    <script>
+        // copy the text inside a `<code>` block code
+
+        // This may slow down the website cause it's not plain HTML anymore but who cares
+        // besides, it's like 15 - 20 lines (30 after comments cause of this rant probably),
+        // and it's not like other web developers are efficient
+        // and they're professionals! I'm just a beginner,
+        // so why should *I* be efficient?
+
+        document.querySelectorAll('pre code').forEach((codeBlock) => {
+            // Make the entire block look clickable
+            codeBlock.style.cursor = 'pointer'; // Change cursor to little hand thingy
+            codeBlock.title = 'Click to copy link'; // add that popup hover thingy
+
+            codeBlock.addEventListener('click', () => { // wait for click
+                navigator.clipboard.writeText(codeBlock.innerText).then(() => {
+                    // Visual feedback by changing background color for 500
+                    const originalBg = codeBlock.style.backgroundColor; // Hooray to not hardcoding
+                    codeBlock.style.backgroundColor = '#b0c7ab'; // Light green color
+
+                    setTimeout(() => { // Change background color back to original after waiting 500
+                        codeBlock.style.backgroundColor = originalBg;
+                    }, 500);
+                });
+            });
+        });
+
+    </script>
+    </body>
+</html>
