@@ -62,12 +62,15 @@ limitations under the License.
 ```mermaid
 kanban
   Todo
+    [get site to show up on google an other search engines]
   In progress
     [create docs for the website such as how-to guide, reccomended browsers, etc.]
     [create a way to make and submit blogs]
   
   Done
     [create tag game]
+    [create sitemap.xml]
+    [create a 404 page]
     [create the bomb-eater game]
     [Create random group generator]
     [Increase support for mobile]

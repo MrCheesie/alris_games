@@ -137,6 +137,10 @@ h2 {
   to { filter: drop-shadow(0 0 12px rgba(24, 168, 245)); }
 }
 
+#404 {
+  font-size: 150px;
+}
+
 
 /* Sticky Footer at absolute bottom */
 footer {
@@ -153,7 +157,9 @@ footer {
     height: 70px;
 }
 
-#buh, buh2 {
-    font-family: 'JetBrains Mono';
-    color: powderblue;
+#buh, #buh2 {
+  font-family: 'JetBrains Mono', monospace;
+  color: powderblue;
 }
+
+
