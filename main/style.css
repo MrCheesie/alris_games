@@ -162,4 +162,12 @@ footer {
   color: powderblue;
 }
 
+.mysteryBox, #mysteryBtn{
+  background: linear-gradient(135deg, yellow, #ffff00);
+  color: #1e1e1e;
+}
+
+ul {
+  list-style-type: none;
+}
 
