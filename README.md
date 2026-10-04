@@ -97,6 +97,8 @@ limitations under the License.
 kanban
   Todo
     [get site to show up on google an other search engines]
+    [create a music player with ad-free music]
+    [create a video player with rob n da bank videos]
     [create a dino game similar to that in Chromium for the 404 page]
   In progress
     [create docs for the website such as how-to guide, reccomended browsers, etc.]
