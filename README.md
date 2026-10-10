@@ -51,14 +51,14 @@ Lastly, go to the original repo and open up a Pull Request, detailing the game a
 ```
 
 ## Game engine
-The games are currently made in lua using the love2d framework and exported to the web with `love.js`, however, we are open to games made using any framework as long as it runs correctly on the web. Tools are made with vanilla JavaScript, HTML and CSS.
+The games are currently made in lua using the love2d framework and exported to the web with `love.js`, however, we are open to games made using any framework and language as long as it runs correctly on the web. Tools are made with vanilla JavaScript, HTML and CSS, but open to any other framework.
 
 ## Site
 
 The site is hosted with GitHub Pages and is live [here](https://mrcheesie.github.io/alris_games/). Shortened url can be found [here](https://tinyurl.com/alris-games).
 
 ## Docs
-Documentation for games and tools is in progress on can be found in the [docs folder](docs/).
+Documentation for games and tools is in progress and can be found in the [docs folder](docs/).
 
 ## Acknowledgments
 Thanks to [EmbedPDF](https://www.embedpdf.com/) for providing the PDF viewer and annotater.
@@ -96,12 +96,12 @@ limitations under the License.
 ```mermaid
 kanban
   Todo
-    [get site to show up on google an other search engines]
+    [get site to show up on Google and other search engines]
     [create a music player with ad-free music]
     [create a video player with rob n da bank videos]
     [create a dino game similar to that in Chromium for the 404 page]
   In progress
-    [create docs for the website such as how-to guide, reccomended browsers, etc.]
+    [create docs for the website such as how-to guide, recommended browsers, etc.]
     [create a way to make and submit blogs]
   
   Done
