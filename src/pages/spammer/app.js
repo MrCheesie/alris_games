@@ -1,33 +1,39 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("formy");
-  const copyBtn = document.getElementById("copyBtn");
+if (typeof document !== 'undefined') {
+  // Bundled as an ES module (strict mode), so the implicit global `result` the
+  // original classic script relied on has to be declared explicitly.
+  let result = "";
 
-  form.addEventListener("submit", function(e) {
-    e.preventDefault(); // Prevents page reload
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("formy");
+    const copyBtn = document.getElementById("copyBtn");
 
-    const quantityInput = document.getElementById("quantity");
-    const textInput = document.getElementById("textInput");
-    const resultElement = document.getElementById("result");
+    form.addEventListener("submit", function(e) {
+      e.preventDefault(); // Prevents page reload
 
-    const quantity = parseInt(quantityInput.value) || 0;
-    const text = textInput.value;
+      const quantityInput = document.getElementById("quantity");
+      const textInput = document.getElementById("textInput");
+      const resultElement = document.getElementById("result");
 
-    // Repeat text string by quantity count
-    result = text.repeat(quantity);
-    resultElement.textContent = result;
+      const quantity = parseInt(quantityInput.value) || 0;
+      const text = textInput.value;
+
+      // Repeat text string by quantity count
+      result = text.repeat(quantity);
+      resultElement.textContent = result;
+    });
+
+    // Copy button functionality
+    copyBtn.addEventListener("click", function (e) {
+      e.preventDefault(); // prevent page reload
+
+      try {
+        navigator.clipboard.writeText(result);
+        console.log("Text copied to clipboard");
+      } catch {
+        console.error("Unable to add text to clipboard");
+      }
+
+
+    });
   });
-
-  // Copy button functionality
-  copyBtn.addEventListener("click", function (e) {
-    e.preventDefault(); // prevent page reload
-
-    try {
-      navigator.clipboard.writeText(result);
-      console.log("Text copied to clipboard");
-    } catch {
-      console.error("Unable to add text to clipboard");
-    }
-
-
-  });
-});
+}

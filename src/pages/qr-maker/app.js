@@ -1,11 +1,13 @@
 import QRCode from 'qrcode';
 
-window.generateQR = async function () {
-    const text = document.getElementById('qr-text').value;
-    const container = document.getElementById('qrcode');
-    container.innerHTML = '';
+if (typeof document !== 'undefined') {
+    window.generateQR = async function () {
+        const text = document.getElementById('qr-text').value;
+        const container = document.getElementById('qrcode');
+        container.innerHTML = '';
 
-    const canvas = document.createElement('canvas');
-    container.appendChild(canvas);
-    await QRCode.toCanvas(canvas, text, { width: 256 });
-};
+        const canvas = document.createElement('canvas');
+        container.appendChild(canvas);
+        await QRCode.toCanvas(canvas, text, { width: 256 });
+    };
+}

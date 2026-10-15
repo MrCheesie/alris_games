@@ -1,6 +1,8 @@
 ---
 import Footer from '../../components/Footer.astro'; // import Footer element
 import "./style.css"; // import css
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 const base: string = import.meta.env.BASE_URL;
 
 // game json import
@@ -9,6 +11,29 @@ import docs from "../docs/details.json";
 import mocker from "../mocker/details.json";
 import draw from "../draw/details.json";
 import qr from "../qr-maker/details.json";
+import spammer from "../spammer/details.json";
+import bsod from "../bsod/details.json";
+import pdf from "../pdf/details.json";
+import blog from "../blog/details.json";
+
+// Games that live in public/ are copied as-is and never enter the Vite module
+// graph, so their details.json cannot be imported. Read them from disk instead.
+interface GameDetails {
+    name: string;
+    author: string;
+    date: string;
+    description: string;
+}
+
+function publicGameDetails(folder: string): GameDetails {
+    return JSON.parse(readFileSync(join(process.cwd(), "public", folder, "details.json"), "utf-8"));
+}
+
+const pong: GameDetails = publicGameDetails("pong");
+const bombEater: GameDetails = publicGameDetails("bomb_eater");
+const rtg: GameDetails = publicGameDetails("RTG");
+const aiHarness: GameDetails = publicGameDetails("AI-harness");
+const tag: GameDetails = publicGameDetails("tag");
 
 ---
 <html lang="en">
@@ -38,8 +63,8 @@ import qr from "../qr-maker/details.json";
             </li>
         <br><hr><br>
             <li id="spammer">
-                <h2>Text repeater</h2>
-                <p>Ever wanted to spam someone with a message? Well now you can.</p>
+                <h2>{spammer.name}</h2>
+                <p>{spammer.description}</p>
                 <br>
                 <a href="../spammer/" class="button">Annoy people!</a> <br>
             </li>
@@ -66,32 +91,32 @@ import qr from "../qr-maker/details.json";
             </li>
         <br><hr><br>
             <li id="errorScreen">
-                <h2>Fake error screen</h2>
-                <p>Prank your friends or get out of doing work with these fake blue screens of death.</p>
+                <h2>{bsod.name}</h2>
+                <p>{bsod.description}</p>
                 <br>
-                <a href="../bsod/index.astro" class="button">Pretend to have an error</a> <br>
+                <a href={`${base}/bsod/`} class="button">Pretend to have an error</a> <br>
             </li>
         <br><hr><br>
             <li id="pdf">
-                <h2>PDF annotater</h2>
-                <p>Annotate, read, and redact PDFs in your browser for free.</p>
+                <h2>{pdf.name}</h2>
+                <p>{pdf.description}</p>
                 <br>
-                <a href="../pdf/index.html" class="button">Annotate PDFs</a>
+                <a href={`${base}/pdf/`} class="button">Annotate PDFs</a>
             </li>
         <br><hr><br>
             <li id="pong">
-                <h2>2-player pong game</h2>
-                <p>Play pong with your friend.</p>
+                <h2>{pong.name}</h2>
+                <p>{pong.description}</p>
                 <br>
-                <a href=`${base}/pong/` class="button">Pong</a>
+                <a href={`${base}/pong/`} class="button">Pong</a>
             </li>
         <br><hr><br>
             <li id="bombEater">
-                <h2>Bomb eater</h2>
-                <p>Eat coins, try not to explode.</p>
+                <h2>{bombEater.name}</h2>
+                <p>{bombEater.description}</p>
                 <br>
-                <a href="../../../public/bomb_eater/index.html" class="button">Game</a>
-                <a href="../../../public/bomb_eater/scores.html" class="button">Scores</a>
+                <a href={`${base}/bomb_eater/`} class="button">Game</a>
+                <a href={`${base}/bomb_eater/scores.html`} class="button">Scores</a>
             </li>
         <br><hr><br>
             <li id="noSayer">
@@ -103,30 +128,30 @@ import qr from "../qr-maker/details.json";
             </li>
         <br><hr><br>
             <li id="RandomTeamGenerator">
-                <h2>Random team generator</h2>
-                <p>Create random teams and groups with this random group generator.  </p>
+                <h2>{rtg.name}</h2>
+                <p>{rtg.description}</p>
                 <br>
-                <a href=`${base}/RTG/` class="button">Free version</a>
-                <a href=`${base}/RTG/paid.html` class="button">Premium version</a>
+                <a href={`${base}/RTG/`} class="button">Free version</a>
+                <a href={`${base}/RTG/paid.html`} class="button">Premium version</a>
             </li>
         <br><hr><br>
             <li id="aiHarness">
-                <h2>Use AI with your own API keys</h2>
-                <p>Use this AI chat harness with your own API keys. Google AI Studio recommended</p>
+                <h2>{aiHarness.name}</h2>
+                <p>{aiHarness.description}</p>
                 <br>
-                <a href="../../../public/AI-harness/" class="button">Chat with AI</a>
+                <a href={`${base}/AI-harness/`} class="button">Chat with AI</a>
             </li>
         <br><hr><br>
             <li id="tag">
-                <h2>Play Tag</h2>
-                <p>Play tag together with your friends! Not compatible with mobile.</p>
+                <h2>{tag.name}</h2>
+                <p>{tag.description}</p>
                 <br>
-                <a href="../../../public/tag/" class="button">Play Tag!</a>
+                <a href={`${base}/tag/`} class="button">Play Tag!</a>
             </li>
         <br><hr><br>
         <li id="blogs">
-            <h2>Blogs</h2>
-            <p>Read and view blogs made by people and make your own.</p>
+            <h2>{blog.name}</h2>
+            <p>{blog.description}</p>
             <br>
             <a href="../blog/" class="button">Blog</a>
         </li>

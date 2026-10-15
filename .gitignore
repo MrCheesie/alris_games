@@ -1,11 +1,28 @@
+# IDE and agent config files
 .idea/
-.DS_Store
-_MACOSX/
-.vscode/
+.vscode
 .claude/
+.codex/
+.zed/
+.freebuff/
+.opencode/
+.junie/
+.kilo/
+.sublime/
+
+# dev resources
 dev_resources.md
 
+# system files
+_MACOSX/
+.DS_Store
+*/.DS_Store
+
+# dist and node modules
 .dist/
 dist/
 .node_modules/
 node_modules/
+
+# astro build cache
+.astro/
