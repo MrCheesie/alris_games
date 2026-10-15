@@ -1,3 +1,0 @@
-import{t as e}from"./rolldown-runtime.CbXtAM7H.js";var t=e((()=>{var e=document.getElementById(`noField`);e.textContent;var t=document.getElementById(`btn`),n=document.getElementById(`copyBtn`);t.addEventListener(`click`,r),n.addEventListener(`click`,i);async function r(){try{let t=await(await fetch(`https://naas.isalman.dev/no`)).json();console.log(t),e.textContent=t.reason}catch(e){console.error(e),alert(`
-Something went wrong. Try checking your internet connection.
-ERROR: ${e}`)}}function i(){navigator.clipboard.writeText(e.textContent),n.textContent=`Copied!`,setTimeout(()=>{n.textContent=`Copy`},2e3)}})),n=e((()=>{t()}));export default n();
