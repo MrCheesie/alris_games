@@ -2,9 +2,18 @@
 
 This is the repository for alris' games, an initiative to provide games and tools for MGIS students.
 
+<Callout
+type="warning"
+collapsible={false}
+defaultOpen
+title="Deprecated branch"
+  >
+  This branch is deprecated and is no longer used for deployment. Please submit contributions to the `astro` branch.
+</Callout>
+
 ## Contributing
 
-Contributions are welcome! Please open an issue or a pull request to discuss your ideas.
+Contributions are **paused on this branch. Submit any contributions to the `astro` branch**
 
 ### Contribution guide
 
@@ -20,22 +29,22 @@ If you want to contribute to this repository, you can do so by:
 4. Adding your game to a folder named after your game and adding that folder in the root of the `alris_games` directory.
 5. Adding a `details.txt` file in your game folder with the following:
 
-    a. game title
+   a. game title
 
-    b. description
+   b. description
 
-    c. the text to put on the button
+   c. the text to put on the button
 
-    d. framework/primary language
+   d. framework/primary language
 
-    e. author 
+   e. author
 
-    f. anything else you deem important
+   f. anything else you deem important
 
 This will go into `games.html`. **Do not modify `games.html`**. If you do so, the PR will be rejected.
-6. Pushing your changes to your forked repository.
-7. Creating a pull request to the original repository
-8. The pull request will generally be accepted within 2-3 days, or else closed with some feedback.
+6\. Pushing your changes to your forked repository.
+7\. Creating a pull request to the original repository
+8\. The pull request will generally be accepted within 2-3 days, or else closed with some feedback.
 
 #### How to contribute (vibe coders)
 
