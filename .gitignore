@@ -6,4 +6,6 @@ _MACOSX/
 dev_resources.md
 
 .dist/
+dist/
 .node_modules/
+node_modules/
