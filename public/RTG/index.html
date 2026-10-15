@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+        />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="black-translucent"
+        />
+        <meta name="theme-color" content="#1a1a1a" />
+        <title>Random Team Generator</title>
+        <link rel="manifest" href="public/manifest.json" />
+        <!-- Favicon -->
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="public/icons/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="public/icons/favicon-16x16.png"
+        />
+        <link rel="shortcut icon" href="public/favicon.ico" />
+
+        <!-- Apple Touch Icons -->
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="public/icons/apple-touch-icon-180x180.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="167x167"
+            href="public/icons/apple-touch-icon-167x167.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="152x152"
+            href="public/icons/apple-touch-icon-152x152.png"
+        />
+
+        <!-- Microsoft Tiles -->
+        <meta name="msapplication-TileColor" content="#1a1a1a" />
+        <meta
+            name="msapplication-TileImage"
+            content="public/icons/icon-144x144.png"
+        />
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="src/css/main.css" />
+        <!-- Component styles -->
+        <link rel="stylesheet" href="src/css/components/logo.css" />
+        <link rel="stylesheet" href="src/css/components/theme-switch.css" />
+        <link rel="stylesheet" href="src/css/components/main-input.css" />
+        <link rel="stylesheet" href="src/css/components/error-message.css" />
+        <link rel="stylesheet" href="src/css/components/team-display.css" />
+        <!-- Layout styles -->
+        <link rel="stylesheet" href="src/css/layout/grid.css" />
+        <link rel="stylesheet" href="src/css/layout/containers.css" />
+        <!-- Theme styles -->
+        <link rel="stylesheet" href="src/css/themes/dark.css" />
+        <link rel="stylesheet" href="src/css/themes/light.css" />
+        <!-- Animations -->
+        <link rel="stylesheet" href="src/css/animations.css" />
+    </head>
+    <body>
+        <div class="app-container">
+            <!-- Logo and Theme Switch -->
+            <header class="header">
+                <div id="logo"></div>
+                <h1 class="header__title">TEAMS GENERATOR</h1>
+                <div id="theme-switch"></div>
+            </header>
+            <script>
+                console.warn("Script active!");
+                // Typewriter animation completion handler
+                window.addEventListener("DOMContentLoaded", function () {
+                    var title = document.querySelector(".header__title");
+                    if (title) {
+                        var duration = 1700;
+                        setTimeout(function () {
+                            title.classList.add("typed");
+                            title.style.borderRight = "none";
+                        }, duration);
+                    }
+
+                    // Input focus enhancement for better UX
+                    var inputArea = document.getElementById("input-area");
+                    if (inputArea) {
+                        inputArea.addEventListener("click", function (e) {
+                            var classList = e.target.classList;
+                            if (
+                                classList.contains("input-container") ||
+                                classList.contains("names-list")
+                            ) {
+                                var namesList =
+                                    document.querySelector(".names-list");
+                                if (namesList) {
+                                    var lastInput =
+                                        namesList.lastElementChild?.querySelector(
+                                            ".name-input",
+                                        );
+                                    if (lastInput) {
+                                        lastInput.focus();
+                                    }
+                                }
+                            }
+                        });
+                    }
+                });
+            </script>
+
+            <!-- Main Content -->
+            <main class="main">
+                <div id="main-input" class="main-input">
+                    <div class="input-container" id="input-area">
+                        <textarea
+                            id="names-input"
+                            placeholder="Enter names (one per line)..."
+                            autofocus
+                        ></textarea>
+                    </div>
+                    <div class="team-count-container">
+                        <p class="team-count-label">NUMBER OF TEAMS:</p>
+                        <div class="controls">
+                            <button class="icon-button" id="decrease-teams">
+                                <span class="material-icons">remove</span>
+                            </button>
+                            <input
+                                type="number"
+                                id="teams-count"
+                                min="2"
+                                value="2"
+                            />
+                            <button class="icon-button" id="increase-teams">
+                                <span class="material-icons">add</span>
+                            </button>
+                        </div>
+                        <button id="generate-teams" class="generate-button">
+                            GENERATE
+                        </button>
+                    </div>
+                </div>
+                <!-- Error Message -->
+                <div id="error-message" class="error-message hidden">
+                    <div class="error-message__content">
+                        <div class="error-message__text"></div>
+                        <button class="error-message__button">OK</button>
+                    </div>
+                </div>
+                <!-- Teams Display -->
+                <div id="teams-display" class="teams-display hidden">
+                    <div class="teams-display__content">
+                        <div class="teams-container"></div>
+                        <div class="actions">
+                            <button
+                                id="refresh-teams"
+                                class="icon-button"
+                                title="Refresh Teams"
+                            >
+                                <span class="material-icons">autorenew</span>
+                            </button>
+                            <button
+                                id="copy-teams"
+                                class="icon-button"
+                                title="Copy Teams"
+                            >
+                                <span class="material-icons">content_copy</span>
+                            </button>
+                            <button
+                                id="close-teams"
+                                class="icon-button"
+                                title="Close"
+                            >
+                                <span class="material-icons">close</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!-- Footer -->
+            <footer class="footer">
+                <p
+                        id="copyRight"
+                        style="font-family:'JetBrains Mono', monospace"
+                >
+                    &copy; 2026 Alris Dhanwani | Apache 2.0  |
+                </p>
+                <br>
+                <a href="../index.html" id="buh"> Return to homepage</a>
+            </footer>
+        </div>
+        <!-- Scripts -->
+        <script src="src/js/utils/teamGenerator.js"></script>
+        <script src="src/js/utils/inputValidator.js"></script>
+        <script src="src/js/utils/storage.js"></script>
+        <script src="src/js/components/Logo.js"></script>
+        <script src="src/js/components/ThemeSwitch.js"></script>
+        <script src="src/js/components/MainInput.js"></script>
+        <script src="src/js/components/ErrorMessage.js"></script>
+        <script src="src/js/components/TeamDisplay.js"></script>
+        <script src="src/js/components/ParticipantCounter.js"></script>
+        <script src="src/js/main.js"></script>
+        <script>
+            // Enhanced Service worker registration with improved auto-update functionality
+            if ("serviceWorker" in navigator) {
+                const basePath = window.location.pathname.includes(
+                    "/Random-Team-Generator",
+                )
+                    ? "/Random-Team-Generator"
+                    : "";
+
+                // Add visual update indicator
+                function showUpdateIndicator() {
+                    const indicator = document.createElement("div");
+                    indicator.id = "update-indicator";
+                    indicator.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            z-index: 10000;
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            animation: slideIn 0.3s ease-out;
+          `;
+                    indicator.innerHTML = "Update available! Refreshing...";
+                    document.body.appendChild(indicator);
+
+                    const style = document.createElement("style");
+                    style.textContent = `
+            @keyframes slideIn {
+              from { transform: translateX(100%); opacity: 0; }
+              to { transform: translateX(0); opacity: 1; }
+            }
+          `;
+                    document.head.appendChild(style);
+                }
+
+                navigator.serviceWorker
+                    .register(`${basePath}/public/service-worker.js`, {
+                        scope: basePath + "/",
+                        updateViaCache: "none", // Force check for SW updates
+                    })
+                    .then((registration) => {
+                        console.log(
+                            "✅ ServiceWorker registration successful",
+                            registration,
+                        );
+
+                        // More aggressive update checking - every 10 seconds when page is visible
+                        let updateInterval;
+
+                        function startUpdateChecking() {
+                            updateInterval = setInterval(() => {
+                                if (document.visibilityState === "visible") {
+                                    console.log("🔄 Checking for updates...");
+                                    registration
+                                        .update()
+                                        .then(() => {
+                                            console.log(
+                                                "📱 Update check completed",
+                                            );
+                                        })
+                                        .catch((err) => {
+                                            console.warn(
+                                                "⚠️ Update check failed:",
+                                                err,
+                                            );
+                                        });
+                                }
+                            }, 10000); // Check every 10 seconds
+                        }
+
+                        startUpdateChecking();
+
+                        // Also check when page becomes visible
+                        document.addEventListener("visibilitychange", () => {
+                            if (document.visibilityState === "visible") {
+                                console.log(
+                                    "📱 Page visible - checking for updates...",
+                                );
+                                registration.update();
+                            }
+                        });
+
+                        // Force update check on load
+                        console.log("🚀 Initial update check...");
+                        registration.update();
+
+                        // Listen for new service worker installations
+                        registration.addEventListener("updatefound", () => {
+                            console.log(
+                                "🔄 Update found! Installing new version...",
+                            );
+                            const newWorker = registration.installing;
+
+                            newWorker.addEventListener("statechange", () => {
+                                console.log(
+                                    "🔄 SW State change:",
+                                    newWorker.state,
+                                );
+
+                                if (newWorker.state === "installed") {
+                                    if (navigator.serviceWorker.controller) {
+                                        console.log(
+                                            "✨ New update available! Reloading in 2 seconds...",
+                                        );
+                                        showUpdateIndicator();
+
+                                        setTimeout(() => {
+                                            window.location.reload();
+                                        }, 2000);
+                                    } else {
+                                        console.log(
+                                            "✅ SW installed for the first time",
+                                        );
+                                    }
+                                }
+                            });
+                        });
+
+                        // Handle controllerchange event
+                        navigator.serviceWorker.addEventListener(
+                            "controllerchange",
+                            () => {
+                                console.log(
+                                    "🔄 Controller changed - reloading page",
+                                );
+                                window.location.reload();
+                            },
+                        );
+                    })
+                    .catch((err) => {
+                        console.error(
+                            "❌ ServiceWorker registration failed:",
+                            err,
+                        );
+                    });
+
+                // Listen for service worker messages
+                navigator.serviceWorker.addEventListener("message", (event) => {
+                    console.log("📨 SW Message:", event.data);
+                    if (event.data && event.data.type === "CACHE_UPDATED") {
+                        console.log("💾 Cache updated, reloading page...");
+                        showUpdateIndicator();
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 1000);
+                    }
+                });
+
+                // Add debugging info to console
+                console.log("**🔧 PWA Debug Info:**");
+                console.log("📍 Base path:", basePath);
+                console.log("🌐 Location:", window.location.href);
+                console.log("📱 User agent:", navigator.userAgent);
+                console.log("🔄 SW supported:", "serviceWorker" in navigator);
+            }
+        </script>
+    </body>
+</html>

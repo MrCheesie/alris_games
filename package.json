@@ -1,9 +1,37 @@
 {
-  "devDependencies": {
-    "jest": "^29.3.1",
-    "@types/jest": "^29.2.5"
+  "name": "alris-astro",
+  "version": "0.0.1",
+  "description": "Alris Games rebuilt in Astro",
+  "keywords": [
+    "astro",
+    "games",
+    "fun",
+    "cool"
+  ],
+  "homepage": "https://github.com/MrCheesie/alris_games#readme",
+  "bugs": {
+    "url": "https://github.com/MrCheesie/alris_games/issues"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrCheesie/alris_games.git"
+  },
+  "license": "Apache-2.0",
+  "author": "Alris Dhanwani",
+  "type": "commonjs",
+  "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^7.3.8",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "esbuild": "^0.28.2",
+    "typescript": "^6.0.3"
   }
 }

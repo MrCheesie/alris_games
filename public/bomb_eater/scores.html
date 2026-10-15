@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>High scores page</title>
+	<style>
+	    /*<!--Font import -->*/
+		@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+		/* CSS */
+		body {
+    		background-color: #f4f4f9;
+    		font-family: Arial, sans-serif;
+		}
+	    .container {
+    		max-width: 600px;
+    		margin: 50px auto;
+    		padding: 20px;
+    		background-color: #fff;
+    		box-shadow: 0 0
+    		}
+
+		.h1 {
+    		font-size: 2em;
+    		text-align: center;
+    		margin-bottom: 1rem;
+		}
+		ul {
+			list-style-type: none;
+			padding: 0;
+		}
+		li {
+			margin-bottom: .5rem;
+			border-bottom: 1px solid grey;
+			border-right: 1px solid grey;
+			border-top: 1px solid grey;
+			border-left: 5px solid greenyellow;
+			border-radius: 50px;
+			padding: 10px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		li:last-child {
+			border-bottom: none;
+		}
+		p {
+		font-family: 'JetBrains Mono';
+		}
+		.center {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		}
+		a {
+			text-decoration: none;
+			color: #007bff;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+
+		footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    z-index: 1000;
+    height: 100px;
+	}
+
+	.footerText {
+	font-family: 'JetBrains Mono';
+	color: #f1f1f1;
+	}
+	</style>
+</head>
+<body>
+    <!-- Actual HTML -->
+    <div class="container">
+    	<h1>High Scores Page - Bomb Eater</h1>
+    	<ul id="score-list">
+           	<li>
+                Loading Data...
+           	</li>
+    	</ul>
+    </div>
+    <footer>
+        <p class="footerText">
+            To add your score, email <a href="mailto:alrisdhanwani@protonmail.com">alrisdhanwani@protonmail.com</a> with your username, score and an image of your score.
+            To play the game, go to <a href="https://transcendent-peony-c6d089.netlify.app/">Floppy Bird Web Edition</a>.
+        </p>
+        <p class="footerText">&copy; Alris Dhanwani. All rights Reserved.</p>
+    </footer>
+</body>
+<script>
+    console.log("Script active");
+
+    const NOCO_DB_API_KEY = "nc_pat_EVD4yoyEYDElxQguKpGXw16IqJuXkwgllPDQvaXt";
+
+
+    async function loadScoreboard() {
+        console.log("Loading scores...");
+        const options = {
+            method: 'GET',
+            headers: {'xc-token': NOCO_DB_API_KEY}
+        };
+
+        try {
+            // Call YOUR Netlify Function (not NoCoDB directly)
+            const response = await fetch("https://app.nocodb.com/api/v3/data/px2vuqfkfzvana1/m47mhrvwcdpzxdn/records?pageSize=25&viewId=vwp1m9zlea7rhngp", options);
+            const data = await response.json();
+            console.log("Data fetched:", data);
+
+            if (!data.records) {
+                console.error("No records found", data);
+                return;
+            }
+
+            // Sort descending
+            const sorted = data.records.sort((a, b) => b.fields.Score - a.fields.Score);
+
+            // Get the <ul> element and clear it
+            const scoreList = document.getElementById("score-list");
+            scoreList.innerHTML = "";
+
+            // Build new <li> elements
+            sorted.forEach((entry, index) => {
+                const li = document.createElement("li");
+                li.className = "score-item";
+
+                li.textContent = `${index + 1}. ${entry.fields.Username} - ${entry.fields.Score}`;
+
+                //random color generator
+                li.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+
+                scoreList.appendChild(li);
+            });
+        } catch (err) {
+            console.error("Failed to load scoreboard:", err);
+        }
+    }
+
+    // Call on page load
+    loadScoreboard();
+</script>
+</html>

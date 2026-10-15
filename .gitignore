@@ -5,4 +5,5 @@ _MACOSX/
 .claude/
 dev_resources.md
 
-doc-editor-src/node_modules
+.dist/
+.node_modules/

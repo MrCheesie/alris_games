@@ -1,0 +1,25 @@
+---
+import Footer from "../../components/Footer.astro";
+import "./style.css";
+---
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+</head>
+<body>
+
+    <h2>QR Code Generator</h2>
+    <label for="qr-text">QR Code text</label>
+    <input type="text" id="qr-text" placeholder="Enter text or URL" value="https://mrcheesie.github.io/alris_games/">
+    <button onclick="generateQR()">Generate QR Code</button>
+
+    <!-- Container where the QR Code will render -->
+    <div id="qrcode"></div>
+
+    <script src="../qr-maker/app.js"></script>
+
+    <Footer />
+</body>
+</html>
