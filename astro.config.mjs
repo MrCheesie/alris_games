@@ -1,6 +1,22 @@
-import {defineConfig} from "astro/config";
+import { defineConfig } from 'astro/config';
+import starlight from '@astrojs/starlight';
 
 export default defineConfig({
-    site: 'https://mrcheesie.github.io',
-    base: '/alris_games',
+  site: 'https://mrcheesie.github.io',
+  base: '/alris_games',
+  integrations: [
+    starlight({
+      title: 'Alris Games',
+      customCss: ['./src/styles/style.css'],
+      // Entries live one level under src/content/docs/ so the docs site is
+      // served at /alris_games/docs/ instead of /alris_games/ (which is the
+      // games homepage from src/pages/index.astro).
+      sidebar: [
+        {
+          label: 'Guides',
+          items: [{ autogenerate: { directory: 'docs/guides' } }],
+        },
+      ],
+    }),
+  ],
 });

@@ -1,3 +1,8 @@
+---
+title: AI Harness Docs
+description: Setup and settings for the AI harness.
+---
+
 # Docs for AI harness
 [AI Harness](https://mrcheesie.github.io/alris_games/AI-harness/)
 
@@ -8,7 +13,7 @@
 ![Going to the settings panel](b4settings.png)
 
 2. Then Change the provider to Google and change the endpoint to
-```API-URL
+```text
 https://generativelanguage.googleapis.com/v1beta/openai/
 ```
 
