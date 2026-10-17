@@ -1,0 +1,46 @@
+---
+import Footer from '../../components/Footer.astro';
+import "./style.css";
+---
+<!-- no/index.astro -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Say no</title>
+    </head>
+    <body>
+        <div id="center">
+            <h1>Set fake notifications</h1>
+            <label>
+                Notification title
+                <br/>
+                <input type="text" name="notif-title" id="notif-title" placeholder="BOMB THREAT ALERT" value="BOMB THREAT ALERT">
+            </label>
+            <label>
+                Notification text
+                <br/>
+                <input type="text" name="notif-body" id="notif-body" placeholder="There is a bomb threat issued in your area. Evacuate immediately." value="There is a bomb threat issued in your area. Evacuate immediately.">
+            </label>
+            <label>
+                Time until notification (in minutes)
+                <br/>
+                <input type="number" min="1" name="notif-time" id="notif-time" value="1">
+            </label>
+            <label>
+                Number of notifications (max: 20)
+                <br/>
+                <input type="number" max="20" min="1" name="notif-amt" id="notif-amt" value="1">
+            </label>
+            <button type="button" id="set-btn">Set notification</button>
+        </div>
+
+        <script>
+            import './script.ts';
+        </script>
+
+        <!-- Astro footer element -->
+        <Footer />
+
+    </body>
+</html>

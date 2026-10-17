@@ -1,3 +1,10 @@
+const dataDiv = document.getElementById('data-div');
+
+const baseUrl: string | undefined = dataDiv?.dataset.myVar;
+
+if (dataDiv) {
+    console.log(baseUrl);
+}
 console.log("script active")
 const gamesList: Array<string> = [
 
@@ -8,13 +15,14 @@ const gamesList: Array<string> = [
     "../qr-maker/",
     "../bsod",
     "../pdf/",
-    "../pong",
-    "../bomb_eater/",
+    `${baseUrl}/pong`,
+    `${baseUrl}/bomb_eater/`,
     "../no/",
-    "../RTG/paid.html",
-    "../AI-harness/",
-    "../tag/",
-    "../blog/"
+    `${baseUrl}/RTG/paid.html`,
+    `${baseUrl}/AI-harness/`,
+    `${baseUrl}/tag/`,
+    "../blog/",
+    "../fakeNotifs/"
 
 ]
 

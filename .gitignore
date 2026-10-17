@@ -26,3 +26,6 @@ node_modules/
 
 # astro build cache
 .astro/
+
+# extras
+webstorm-urlopener.html
