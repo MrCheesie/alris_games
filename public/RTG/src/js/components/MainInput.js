@@ -371,6 +371,25 @@ class MainInput {
     // Save to storage
     StorageManager.save(StorageManager.KEYS.SAVED_NAMES, this.textArea.value);
   }
+
+  /**
+   * Load a list of preset names into the input list.
+   * Replaces current inputs; user can then add or remove names.
+   * @param {string[]} names - Names to fill in
+   */
+  loadPresetNames(names) {
+    if (!Array.isArray(names)) return;
+    this.namesList.innerHTML = "";
+    names.forEach((name) => {
+      this.addNameInput(String(name));
+    });
+    // Always leave one empty input at the end for adding more
+    this.addNameInput();
+    const namesText = names.join("\n");
+    this.textArea.value = namesText;
+    this.participantCounter.updateCount();
+    StorageManager.save(StorageManager.KEYS.SAVED_NAMES, namesText);
+  }
   /**
    * Update team count with validation
    * @param {number|string} value - New value for team count

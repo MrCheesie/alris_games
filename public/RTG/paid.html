@@ -81,6 +81,54 @@
         <link rel="stylesheet" href="src/css/themes/light.css" />
         <!-- Animations -->
         <link rel="stylesheet" href="src/css/animations.css" />
+    <!-- Preset modal styles (paid only) -->
+    <style>
+        .preset-modal {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 9999;
+        }
+        .preset-modal.hidden { display: none; }
+        .preset-modal__card {
+            background: #1e1e1e;
+            color: #f5f5f5;
+            padding: 24px;
+            border-radius: 12px;
+            width: min(420px, 90vw);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+        .preset-modal__card h2 { margin: 0 0 8px; font-size: 1.25rem; }
+        .preset-modal__card p { margin: 0 0 16px; opacity: 0.85; }
+        .preset-modal__card select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border-radius: 8px;
+            border: 1px solid #444;
+            background: #2a2a2a;
+            color: #f5f5f5;
+            font-size: 1rem;
+        }
+        .preset-modal__actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+        .preset-modal__actions button {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        #preset-load { background: #4CAF50; color: #fff; }
+        #preset-skip { background: #444; color: #fff; }
+    </style>
     </head>
     <body>
         <div class="app-container">
@@ -378,6 +426,18 @@
                 </div>
             </div>
         </div>
+        <!-- Preset loading popup (paid only) -->
+        <div id="preset-modal" class="preset-modal hidden">
+            <div class="preset-modal__card" role="dialog" aria-modal="true" aria-labelledby="preset-title">
+                <h2 id="preset-title">Do you want to load preset?</h2>
+                <p>Choose a preset group of names to fill in.</p>
+                <select id="preset-select"></select>
+                <div class="preset-modal__actions">
+                    <button type="button" id="preset-load">Load Preset</button>
+                    <button type="button" id="preset-skip">No thanks</button>
+                </div>
+            </div>
+        </div>
         <!-- Scripts -->
         <script src="src/js/utils/teamGenerator.js"></script>
         <script src="src/js/utils/inputValidator.js"></script>
@@ -389,6 +449,85 @@
         <script src="src/js/components/TeamDisplay.js"></script>
         <script src="src/js/components/ParticipantCounter.js"></script>
         <script src="src/js/main.js"></script>
+        <script>
+            // Preset loading (paid only): ask on open, load from preset-paid.json
+            (function () {
+                "use strict";
+                var modal = document.getElementById("preset-modal");
+                var select = document.getElementById("preset-select");
+                var loadBtn = document.getElementById("preset-load");
+                var skipBtn = document.getElementById("preset-skip");
+                if (!modal || !select || !loadBtn || !skipBtn) return;
+
+                var presets = null;
+
+                function hideModal() {
+                    modal.classList.add("hidden");
+                    document.body.style.overflow = "";
+                }
+
+                function showModal() {
+                    modal.classList.remove("hidden");
+                    document.body.style.overflow = "hidden";
+                }
+
+                function populateSelect(data) {
+                    select.innerHTML = "";
+                    Object.keys(data || {}).forEach(function (key) {
+                        var opt = document.createElement("option");
+                        opt.value = key;
+                        opt.textContent = key;
+                        select.appendChild(opt);
+                    });
+                }
+
+                function tryInit() {
+                    if (!window.app || !window.app.mainInput) {
+                        setTimeout(tryInit, 50);
+                        return;
+                    }
+                    fetch("preset-paid.json")
+                        .then(function (res) {
+                            if (!res.ok) throw new Error("fetch failed");
+                            return res.json();
+                        })
+                        .then(function (data) {
+                            presets = data;
+                            var keys = Object.keys(data || {});
+                            if (keys.length === 0) return;
+                            populateSelect(data);
+                            showModal();
+                        })
+                        .catch(function (err) {
+                            console.warn("Preset load failed:", err);
+                        });
+                }
+
+                loadBtn.addEventListener("click", function () {
+                    if (!presets) return;
+                    var key = select.value;
+                    var names = presets[key];
+                    if (Array.isArray(names) && window.app && window.app.mainInput) {
+                        window.app.mainInput.loadPresetNames(names);
+                    }
+                    hideModal();
+                });
+
+                skipBtn.addEventListener("click", hideModal);
+
+                document.addEventListener("keydown", function (e) {
+                    if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+                        hideModal();
+                    }
+                });
+
+                if (document.readyState === "loading") {
+                    document.addEventListener("DOMContentLoaded", tryInit);
+                } else {
+                    tryInit();
+                }
+            })();
+        </script>
         <script>
             /**
              * Fake premium paywall for team generation.
