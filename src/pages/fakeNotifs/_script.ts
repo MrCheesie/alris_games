@@ -1,5 +1,3 @@
-export const prerender = false;
-
 const delay = (ms: number | undefined) => new Promise(res => setTimeout(res, ms));
 
 const delay_between_repeat_notification_in_ms = 1000; // self-explanatory
