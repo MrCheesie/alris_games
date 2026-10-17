@@ -1,4 +1,4 @@
-const button: HTMLElement | null = document.getElementById("set-btn");
+export const prerender = false;
 
 const delay = (ms: number | undefined) => new Promise(res => setTimeout(res, ms));
 
@@ -45,6 +45,9 @@ async function sendNotifs() {
 }
 
 if (typeof document !== 'undefined') {
+
+    // @ts-ignore
+    const button: HTMLElement | null = document.getElementById("set-btn");
 
     // @ts-ignore
     button.addEventListener("click", async () => {
