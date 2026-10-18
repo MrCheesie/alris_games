@@ -2,14 +2,9 @@
 
 This is the repository for alris' games, an initiative to provide games and tools for MGIS students.
 
-<Callout
-type="warning"
-collapsible={false}
-defaultOpen
-title="Deprecated branch"
-  >
-  This branch is deprecated and is no longer used for deployment. Please submit contributions to the `astro` branch.
-</Callout>
+> [!WARNING]
+> This branch is deprecated and is no longer used for deployment. Please submit contributions to the `astro` branch.
+
 
 ## Contributing
 
