@@ -1,3 +1,8 @@
+---
+title: Contribution Guidelines
+description: Guidelines on contributing
+---
+
 # Contribution guidelines
 
 You must follow this policy if you wish to contibute.
