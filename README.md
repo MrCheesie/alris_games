@@ -19,7 +19,7 @@ If you want to contribute to this repository, you can do so by:
 
 1. Starring and forking the repository.
 2. Locally cloning your fork's astro branch with `git clone -b astro --single-branch https://github.com/YOUR-USERNAME/alris_games`. Ensure you clone the astro branch
-3. `cd`ing into that fork with.
+3. `cd`ing into that cloned folder.
 4. Adding your game to a folder named after your game and adding that folder in the `src/pages` directory if your game is made with Astro, and `public` if it's made with another framework (vanilla JS, React, Next.js etc.).
 5. Adding a `details.json` file in your game folder with the following:
 
@@ -56,6 +56,8 @@ Your game will be added to `games.html` manually by the owner of the repo.
 > - Apache 2.0 (recommended)
 > - BSD
 > - The Unlicense
+>
+> Add your license to the game folder.
 
 #### How to contribute (vibe coders)
 
