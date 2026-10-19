@@ -1,3 +1,5 @@
+![Cover image](public/assets/title_screen.gif)
+
 # Alris Games
 
 This is the repository for alris' games, originally an initiative to provide games and tools for MGIS students.

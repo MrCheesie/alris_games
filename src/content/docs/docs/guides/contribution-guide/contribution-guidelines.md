@@ -5,7 +5,7 @@ description: Guidelines on contributing
 
 # Contribution guidelines
 
-You must follow this policy if you wish to contibute.
+You must follow this policy if you wish to contribute.
 
 - No harmful games/tools
 - No inappropriate content
