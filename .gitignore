@@ -13,11 +13,6 @@
 # dev resources
 dev_resources.md
 
-# system files
-_MACOSX/
-.DS_Store
-*/.DS_Store
-
 # dist and node modules
 .dist/
 dist/
@@ -27,5 +22,34 @@ node_modules/
 # astro build cache
 .astro/
 
+# env vars
+.env
+
 # extras
 webstorm-urlopener.html
+
+# temp
+tmp/
+*~
+
+# Default/system files
+
+# macOS
+.DS_Store
+_MACOSX
+
+# winslop
+$RECYCLE.BIN/
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+*.lnk
+
+# linux/linux-based
+.directory
+.directory/
+Trash-*/
+.fuse_hidden*
+.nox/
