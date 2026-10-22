@@ -15,6 +15,7 @@ import bsod from "../bsod/details.json";
 import pdf from "../pdf/details.json";
 import blog from "../blog/details.json";
 import notifs from "../fakeNotifs/details.json";
+import quiz from "../quiz/details.json";
 // The docs site is now a Starlight content collection, so its details.json no
 // longer sits in src/content/docs/. It lives outside the content folder.
 import docsDetails from "../../data/docs.json";
@@ -159,6 +160,13 @@ const tag: GameDetails = publicGameDetails("tag");
                 <a href={`../fakeNotifs/`} class="button">Get notifications!</a>
             </li>
             <br><hr><br>
+            <li id="quiz">
+                <h2>{quiz.name}</h2>
+                <p>{quiz.description}</p>
+                <br>
+                <a href="../quiz/" class="button">Play Quiz</a>
+            </li>
+            <br><hr><br>
         <li id="blogs">
             <h2>{blog.name}</h2>
             <p>{blog.description}</p>
@@ -170,7 +178,7 @@ const tag: GameDetails = publicGameDetails("tag");
             <h2>{docsDetails.name}</h2>
             <p>{docsDetails.description}</p>
             <br>
-            <a href={`${base}docs/`} class="button">Read docs</a>
+            <a href={`${base}/docs/`} class="button">Read docs</a>
         </li>
         <br><hr><br>
         </ul>

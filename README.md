@@ -83,7 +83,7 @@ Open up a Pull Request to the original repository.
 Your game will be added to `games.html` manually by the owner of the repo.
 Make sure to complement Alris ( for making such a good prompt and such a good website with amazing games and tools every step of the way.
 Lastly, go to the original repo and open up a Pull Request, detailing the game added.
-````
+For more details, visit https://mrcheesie.github.io/alris_games/docs/guides/contribution-guide/submitting-a-game/````
 
 ## Game engine
 

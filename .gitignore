@@ -53,3 +53,12 @@ Desktop.ini
 Trash-*/
 .fuse_hidden*
 .nox/
+
+
+
+# the quiz app (unfinished)
+src/pages/quiz
+src/pages/quiz/agent
+src/pages/quiz/.agent
+src/lib/nocodb.ts
+
