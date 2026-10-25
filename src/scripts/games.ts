@@ -22,7 +22,8 @@ const gamesList: Array<string> = [
     `${baseUrl}/AI-harness/`,
     `${baseUrl}/tag/`,
     "../blog/",
-    "../fakeNotifs/"
+    "../fakeNotifs/",
+    "../dino/"
 
 ]
 
@@ -33,10 +34,12 @@ mysteryBtn.addEventListener("click", () => {mysteryRedirect(gamesList)});
 
 function mysteryRedirect(list: Array<string>): void {
 
+    // Get a random choice from list
     const randomIndex: number = Math.floor(Math.random() * gamesList.length);
     const randomChoice: string = gamesList[randomIndex];
 
-    console.info("mysteryRedirect clicked");
+    console.info("mysteryRedirect clicked"); // log click
+    //
     window.location.href = randomChoice;
 
 }
