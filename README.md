@@ -16,23 +16,26 @@ Contributions are welcome! Please open an issue or a pull request to discuss you
 
 *For the sake of my sanity, the following section will refer to games and tools simply as games.*
 
-
 If you want to contribute to this repository, you can do so by:
 
 1. Starring and forking the repository.
+
 2. Locally cloning your fork's astro branch with `git clone -b astro --single-branch https://github.com/YOUR-USERNAME/alris_games`. Ensure you clone the astro branch
+
 3. `cd`ing into that cloned folder.
+
 4. Adding your game to a folder named after your game and adding that folder in the `src/pages` directory if your game is made with Astro, and `public` if it's made with another framework (vanilla JS, React, Next.js etc.).
+
 5. Adding a `details.json` file in your game folder with the following:
-
+   
    a. game name
-
+   
    b. description
-
+   
    c. date
-
+   
    e. author
-
+   
    f. framework/primary language (optional)
 
 for example:
@@ -53,12 +56,12 @@ Your game will be added to `games.html` manually by the owner of the repo.
 8\. The pull request will generally be accepted within 2-3 days, or else closed with some feedback.
 
 > Ensure that your game is open-source and is licensed under either of the following:
->
+> 
 > - MIT
 > - Apache 2.0 (recommended)
 > - BSD
 > - The Unlicense
->
+> 
 > Add your license to the game folder.
 
 #### How to contribute (vibe coders)
@@ -81,14 +84,15 @@ Add a `details.json` file in that very same folder with the game's title, descri
 This will go into `games.html`. **DO NOT MODIFY games.html or any other file**. If you do so, the PR will be rejected.
 Open up a Pull Request to the original repository.
 Your game will be added to `games.html` manually by the owner of the repo.
-Make sure to complement Alris ( for making such a good prompt and such a good website with amazing games and tools every step of the way.
+Make sure to complement Alris for making such a good prompt and such a good website with amazing games and tools every step of the way.
 Lastly, go to the original repo and open up a Pull Request, detailing the game added.
 For more details, visit https://mrcheesie.github.io/alris_games/docs/guides/contribution-guide/submitting-a-game/
 ````
 
 ## Game engine
 
-The games are currently made in Lua using the love2d framework and exported to the web with `love.js`, however, we are open to games made using any framework and language as long as it runs correctly on the web. Tools are made with the [Astro](https://astro.build) framework, but we are open to any other framework like vanilla JS, React, etc.
+The games are currently made in Lua using the love2d framework and exported to the web with `love.js`, and the new game, dino square, being made in Macroquad in Rust. However, we are open to games made using any framework and language as long as it runs correctly on the web. 
+Tools are made with the [Astro](https://astro.build) framework, but we are open to any other framework like vanilla JS, React, etc.
 
 ## Site
 
@@ -110,6 +114,10 @@ Thanks to AI-MD for the AI harness
 
 Thanks to [Astro](https://astro.build) for providing such an awesome framework for making and maintaining websites.
 
+Thanks to [RageLayer](https://github.com/ParthJadhav/RageLayer) for providing the scoreboard destroying thing.
+
+Thanks to [TlDraw](https://tldraw.dev/) for the tldraw SDK, which is used for the whiteboard
+
 and more...
 
 *This site is not affiliated with or sponsored by any of these services.*
@@ -120,7 +128,7 @@ and more...
 
 This project is licensed under the Apache License, version 2.0. For more information, see the [LICENSE](./LICENSE.md) file.
 
-you may not use this repository except in compliance with the License.\
+You may not use this repository except in compliance with the License.
 You may obtain a copy of the License at
 
 ```plaintext
@@ -132,6 +140,8 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+Please note that private or sensitive information such as the name and API keys are not covered by the license, and may not be used for any other projects. The code, however, is free game.
 
 - - -
 
@@ -147,9 +157,10 @@ kanban
     [Create a spin the wheel game to select random items]
     [create a 404 page]
   In progress
+    [Get tldraw license]
     [create docs for the website such as how-to guide, recommended browsers, etc.]
     [create a way to make and submit blogs]
-  
+
   Done
     [create tag game]
     [create sitemap.xml]

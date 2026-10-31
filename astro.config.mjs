@@ -1,10 +1,12 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import react from '@astrojs/react';
 
 export default defineConfig({
   site: 'https://mrcheesie.github.io',
   base: '/alris_games',
   integrations: [
+    react(),
     starlight({
       title: 'Alris Games',
       customCss: ['./src/styles/style.css'],

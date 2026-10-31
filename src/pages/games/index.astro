@@ -16,6 +16,7 @@ import pdf from "../pdf/details.json";
 import blog from "../blog/details.json";
 import notifs from "../fakeNotifs/details.json";
 import dino from "../dino/details.json";
+import wb from "../whiteboard/details.json";
 
 // The docs site is now a Starlight content collection, so its details.json no
 // longer sits in src/content/docs/. It lives outside the content folder.
@@ -86,6 +87,13 @@ const tag: GameDetails = publicGameDetails("tag");
                 <p>{draw.description}</p>
                 <br>
                 <a href="../draw/" class="button">Drawing app</a> <br>
+            </li>
+        <br><hr><br>
+            <li id="whiteboard">
+                <h2>{wb.name}</h2>
+                <p>{wb.description}</p>
+                <br>
+                <a href="../whiteboard/"class="button">Drawing app</a> <br>
             </li>
         <br><hr><br>
             <li id="qrMaker">
