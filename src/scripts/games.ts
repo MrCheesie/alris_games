@@ -16,21 +16,25 @@ const gamesList: Array<string> = [
     "../bsod",
     "../pdf/",
     `${baseUrl}/pong`,
-    `${baseUrl}/bomb_eater/`,
+    `../bomb_eater/`,
     "../no/",
     `${baseUrl}/RTG/paid.html`,
     `${baseUrl}/AI-harness/`,
     `${baseUrl}/tag/`,
     "../blog/",
     "../fakeNotifs/",
-    "../dino/"
+    "../dino/",
+    "../whiteboard/"
 
 ]
 
 const mysteryBtn: HTMLElement | null = document.getElementById("mysteryBtn")
 
-// @ts-ignore
-mysteryBtn.addEventListener("click", () => {mysteryRedirect(gamesList)});
+if (mysteryBtn instanceof HTMLElement) {
+    mysteryBtn.addEventListener("click", () => {mysteryRedirect(gamesList)});
+} else {
+    console.error("mysteryBtn not found");
+}
 
 function mysteryRedirect(list: Array<string>): void {
 
@@ -39,7 +43,7 @@ function mysteryRedirect(list: Array<string>): void {
     const randomChoice: string = gamesList[randomIndex];
 
     console.info("mysteryRedirect clicked"); // log click
-    //
+    
     window.location.href = randomChoice;
 
 }

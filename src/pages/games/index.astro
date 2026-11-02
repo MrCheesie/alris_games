@@ -17,6 +17,7 @@ import blog from "../blog/details.json";
 import notifs from "../fakeNotifs/details.json";
 import dino from "../dino/details.json";
 import wb from "../whiteboard/details.json";
+import bombEater from "../bomb_eater/details.json";
 
 // The docs site is now a Starlight content collection, so its details.json no
 // longer sits in src/content/docs/. It lives outside the content folder.
@@ -36,7 +37,6 @@ function publicGameDetails(folder: string): GameDetails {
 }
 
 const pong: GameDetails = publicGameDetails("pong");
-const bombEater: GameDetails = publicGameDetails("bomb_eater");
 const rtg: GameDetails = publicGameDetails("RTG");
 const aiHarness: GameDetails = publicGameDetails("AI-harness");
 const tag: GameDetails = publicGameDetails("tag");
@@ -128,8 +128,8 @@ const tag: GameDetails = publicGameDetails("tag");
                 <h2>{bombEater.name}</h2>
                 <p>{bombEater.description}</p>
                 <br>
-                <a href={`${base}/bomb_eater/`} class="button">Game</a>
-                <a href={`${base}/bomb_eater/scores.html`} class="button">Scores</a>
+                <a href={`../bomb_eater/`} class="button">Game</a>
+                <a href={`../bomb_eater/scores/`} class="button">Scores</a>
             </li>
         <br><hr><br>
             <li id="noSayer">

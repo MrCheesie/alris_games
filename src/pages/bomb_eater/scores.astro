@@ -1,11 +1,12 @@
-
-<!DOCTYPE html>
+---
+import Footer from "../../components/Footer.astro";
+---
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>High scores page</title>
-	<style>
+	<style is:global>
 	    /*<!--Font import -->*/
 		@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
@@ -92,18 +93,17 @@
            	</li>
     	</ul>
     </div>
-    <footer>
-        <p class="footerText">
+	<Footer>
+	    <p class="footerText">
             To add your score, email <a href="mailto:alrisdhanwani@protonmail.com">alrisdhanwani@protonmail.com</a> with your username, score and an image of your score.
-            To play the game, go to <a href="https://transcendent-peony-c6d089.netlify.app/">Floppy Bird Web Edition</a>.
+            To play the game, go to <a href="../bomb_eater/">Bomb eater</a>.
         </p>
-        <p class="footerText">&copy; Alris Dhanwani. All rights Reserved.</p>
-    </footer>
+	</Footer>
 </body>
 <script>
     console.log("Script active");
 
-    const NOCO_DB_API_KEY = "nc_pat_EVD4yoyEYDElxQguKpGXw16IqJuXkwgllPDQvaXt";
+    const NOCO_DB_API_KEY = "nc_pat_EVD4yoyEYDElxQguKpGXw16IqJuXkwgllPDQvaXt"; // ooooh API key don't mind if i do *yoinks*
 
 
     async function loadScoreboard() {
@@ -114,7 +114,6 @@
         };
 
         try {
-            // Call YOUR Netlify Function (not NoCoDB directly)
             const response = await fetch("https://app.nocodb.com/api/v3/data/px2vuqfkfzvana1/m47mhrvwcdpzxdn/records?pageSize=25&viewId=vwp1m9zlea7rhngp", options);
             const data = await response.json();
             console.log("Data fetched:", data);
@@ -125,14 +124,18 @@
             }
 
             // Sort descending
-            const sorted = data.records.sort((a, b) => b.fields.Score - a.fields.Score);
+            const sorted = data.records.sort((a: { fields: { Score: number; }; }, b: { fields: { Score: number; }; }) => b.fields.Score - a.fields.Score);
 
             // Get the <ul> element and clear it
-            const scoreList = document.getElementById("score-list");
+            const scoreList: HTMLElement | null = document.getElementById("score-list");
+			if (scoreList instanceof HTMLElement) {
             scoreList.innerHTML = "";
+			} else {
+				
+			}
 
             // Build new <li> elements
-            sorted.forEach((entry, index) => {
+            sorted.forEach((entry: { fields: { Username: any; Score: any; }; }, index: number) => {
                 const li = document.createElement("li");
                 li.className = "score-item";
 
@@ -141,7 +144,9 @@
                 //random color generator
                 li.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 
+				if (scoreList instanceof HTMLElement) {
                 scoreList.appendChild(li);
+				}
             });
         } catch (err) {
             console.error("Failed to load scoreboard:", err);
