@@ -1,0 +1,606 @@
+{
+  "version": "2.21",
+  "children": [
+    {
+      "type": "frame",
+      "id": "bi8Au",
+      "x": 0,
+      "y": 0,
+      "name": "Frame",
+      "clip": true,
+      "width": 800,
+      "height": 600,
+      "fill": "#010101",
+      "layout": "none",
+      "children": [
+        {
+          "type": "group",
+          "id": "CNSrp",
+          "x": -53.835700850277036,
+          "y": 268.47367703647797,
+          "name": "contruction tape",
+          "reusable": true,
+          "children": [
+            {
+              "type": "rectangle",
+              "id": "y4uzR",
+              "x": 0,
+              "y": 250.92029159441302,
+              "rotation": 13.947796942204896,
+              "fill": "#ffdd00ff",
+              "width": 1041,
+              "height": 62
+            },
+            {
+              "type": "path",
+              "id": "q5ZC4q",
+              "x": 93.33570085027704,
+              "y": 221.02632296352203,
+              "geometry": "M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z",
+              "fill": "#000000ff",
+              "width": 65,
+              "height": 68,
+              "stroke": "#000000",
+              "strokeWidth": 1
+            },
+            {
+              "type": "path",
+              "id": "X8yNRf",
+              "x": 372.835700850277,
+              "y": 152.02632296352203,
+              "geometry": "M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z",
+              "fill": "#000000ff",
+              "width": 65,
+              "height": 68,
+              "stroke": "#000000",
+              "strokeWidth": 1
+            },
+            {
+              "type": "path",
+              "id": "xNwQ8",
+              "x": 654.835700850277,
+              "y": 83.02632296352203,
+              "geometry": "M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z",
+              "fill": "#000000ff",
+              "width": 65,
+              "height": 68,
+              "stroke": "#000000",
+              "strokeWidth": 1
+            },
+            {
+              "type": "path",
+              "id": "WpKQX",
+              "x": 189.83570085027702,
+              "y": 197.52632296352203,
+              "geometry": "M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z",
+              "fill": "#000000ff",
+              "width": 65,
+              "height": 68,
+              "stroke": "#000000",
+              "strokeWidth": 1
+            },
+            {
+              "type": "path",
+              "id": "cP8ps",
+              "x": 469.335700850277,
+              "y": 128.52632296352203,
+              "geometry": "M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z",
+              "fill": "#000000ff",
+              "width": 65,
+              "height": 68,
+              "stroke": "#000000",
+              "strokeWidth": 1
+            },
+            {
+              "type": "path",
+              "id": "pM0cD",
+              "x": 751.335700850277,
+              "y": 58.526322963522034,
+              "geometry": "M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z",
+              "fill": "#000000ff",
+              "width": 65,
+              "height": 68,
+              "stroke": "#000000",
+              "strokeWidth": 1
+            },
+            {
+              "type": "path",
+              "id": "T4Pige",
+              "x": 280.835700850277,
+              "y": 174.52632296352203,
+              "geometry": "M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z",
+              "fill": "#000000ff",
+              "width": 65,
+              "height": 68,
+              "stroke": "#000000",
+              "strokeWidth": 1
+            },
+            {
+              "type": "path",
+              "id": "b0s5NC",
+              "x": 560.335700850277,
+              "y": 106.52632296352203,
+              "geometry": "M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z",
+              "fill": "#000000ff",
+              "width": 65,
+              "height": 68,
+              "stroke": "#000000",
+              "strokeWidth": 1
+            },
+            {
+              "type": "path",
+              "id": "o4U4P",
+              "x": 842.335700850277,
+              "y": 36.526322963522034,
+              "geometry": "M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z",
+              "fill": "#000000ff",
+              "width": 65,
+              "height": 68,
+              "stroke": "#000000",
+              "strokeWidth": 1
+            }
+          ]
+        },
+        {
+          "id": "taj8d",
+          "type": "ref",
+          "ref": "CNSrp",
+          "x": 36.34151146041441,
+          "y": 133,
+          "rotation": -28.061038589873252
+        },
+        {
+          "id": "E12fG",
+          "type": "ref",
+          "ref": "CNSrp",
+          "x": -353,
+          "y": 47.895642312280245,
+          "rotation": 20.550429144677597
+        },
+        {
+          "type": "text",
+          "id": "DAuRI",
+          "x": 146,
+          "y": 139,
+          "fill": "#f1f1f1",
+          "textGrowth": "fixed-width-height",
+          "width": 456,
+          "height": 181,
+          "content": "Sorry, this page is still under construction",
+          "textAlign": "center",
+          "textAlignVertical": "middle",
+          "fontFamily": "Fira Code",
+          "fontSize": 45,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "path",
+          "id": "u3rRkR",
+          "x": 0,
+          "y": 197,
+          "geometry": "M0 0l39-17.5-4-37.5 24.5-37m-36.5 81.679l30.5 50.821 32.5 10m-41.802-25.5l26.302-25 28.5 14m-62-50.25l29.5-5.75 19.5-16.5 6.5 7.5",
+          "width": 99,
+          "height": 142.5,
+          "stroke": "#f1f1f1",
+          "strokeWidth": 1
+        }
+      ]
+    },
+    {
+      "type": "path",
+      "id": "H57gDA",
+      "x": 673.7442416110703,
+      "y": 264.4095834315442,
+      "name": "crack",
+      "rotation": 106.48955801100807,
+      "geometry": "M0 0l-63 68-56.5 0 18 38.5-13 47.5m23.25-86l36.75 33.5-8.5-7.748 44-17.752m-23.618-30l-36.882-49.5 16.5 22.145 20.382-42.645m-58.882 92l-22-44 14.5-10-27.5-9",
+      "width": 136.5,
+      "height": 178,
+      "stroke": "#f1f1f1",
+      "strokeWidth": 1,
+      "strokeLinejoin": "bevel",
+      "strokeLinecap": "square"
+    },
+    {
+      "type": "frame",
+      "id": "HXMpk",
+      "x": 884.4233650358353,
+      "y": 0,
+      "name": "div",
+      "context": "div",
+      "clip": true,
+      "width": 1180,
+      "height": 820,
+      "fill": "#ffffff",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "zvw7I",
+          "name": "header",
+          "context": "header",
+          "height": 64,
+          "fill": "#fffffff2",
+          "stroke": "#0000001a",
+          "strokeWidth": {
+            "bottom": 1
+          },
+          "strokeAlignment": "inner",
+          "effect": {
+            "type": "background_blur",
+            "radius": 8
+          },
+          "padding": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "r3Zj1F",
+              "name": "div",
+              "context": "div",
+              "width": 1180,
+              "padding": [
+                0,
+                40
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "d7URk",
+                  "name": "span",
+                  "context": "span",
+                  "metadata": {
+                    "type": "dom-import",
+                    "sourceUrl": "https://www.pen.dev/design/construction-page",
+                    "tag": "a",
+                    "href": "/"
+                  },
+                  "gap": 6,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "lTEt1",
+                      "name": "img",
+                      "context": "img",
+                      "metadata": {
+                        "nimg": "1",
+                        "type": "dom-import",
+                        "sourceUrl": "https://www.pen.dev/design/construction-page",
+                        "tag": "img"
+                      },
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "images/pen.dev/961de3fd8db9c057.png",
+                        "mode": "stretch"
+                      },
+                      "width": 21.45,
+                      "height": 26
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "UiKUd",
+                      "name": "img",
+                      "context": "img",
+                      "metadata": {
+                        "nimg": "1",
+                        "type": "dom-import",
+                        "sourceUrl": "https://www.pen.dev/design/construction-page",
+                        "tag": "img"
+                      },
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "embedded-image.png",
+                        "mode": "stretch"
+                      },
+                      "width": 75.15,
+                      "height": 19.5
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "iFDUD",
+          "name": "main",
+          "context": "main",
+          "width": "fill_container",
+          "padding": [
+            170,
+            40,
+            250,
+            40
+          ],
+          "justifyContent": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "JCKtS",
+              "name": "div",
+              "context": "div",
+              "width": 448,
+              "height": 336,
+              "layout": "vertical",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "X6GWrj",
+                  "name": "div",
+                  "context": "div",
+                  "width": 80,
+                  "height": 80,
+                  "cornerRadius": 16,
+                  "stroke": "#0000001a",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
+                  "padding": 1,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "ESF3A",
+                      "name": "svg",
+                      "context": "Compass - svg",
+                      "clip": true,
+                      "width": 36,
+                      "height": 36,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "N3raU",
+                          "x": 3,
+                          "y": 3,
+                          "width": 30,
+                          "height": 30,
+                          "stroke": "#666",
+                          "strokeWidth": 2.25,
+                          "strokeLinejoin": "round",
+                          "strokeLinecap": "round"
+                        },
+                        {
+                          "type": "path",
+                          "id": "FtnCL",
+                          "x": 11.640000343322754,
+                          "y": 11.640000343322754,
+                          "geometry": "M8.48 0l-1.804 5.411c-0.19906 0.59726-0.66774 1.06594-1.265 1.265l-5.411 1.804 1.804-5.411c0.19906-0.59726 0.66774-1.06594 1.265-1.265l5.411-1.804z",
+                          "width": 12.719999313354492,
+                          "height": 12.719999313354492,
+                          "stroke": "#666",
+                          "strokeWidth": 2.25,
+                          "strokeLinejoin": "round",
+                          "strokeLinecap": "round"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "zFT5V",
+                  "name": "spacer",
+                  "width": "fill_container",
+                  "height": 37.79,
+                  "layout": "none"
+                },
+                {
+                  "type": "text",
+                  "id": "hkNYb",
+                  "name": "Page not found",
+                  "context": "h1",
+                  "fill": "#141414",
+                  "content": "Page not found",
+                  "lineHeight": 1.11,
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 36,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "z3Viig",
+                  "name": "spacer",
+                  "width": "fill_container",
+                  "height": 12,
+                  "layout": "none"
+                },
+                {
+                  "type": "text",
+                  "id": "E7CDw",
+                  "name": "We looked everywhere, but this page seem",
+                  "context": "p",
+                  "fill": "#666666",
+                  "textGrowth": "fixed-width-height",
+                  "width": "fill_container",
+                  "height": 84,
+                  "content": "We looked everywhere, but this page seems to have wandered off the canvas. Let's get you back on track.",
+                  "lineHeight": 1.56,
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "Ut443",
+                  "name": "spacer",
+                  "width": "fill_container",
+                  "height": 40,
+                  "layout": "none"
+                },
+                {
+                  "type": "frame",
+                  "id": "tMjo8",
+                  "name": "div",
+                  "context": "div",
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "wx5Im",
+                      "name": "a",
+                      "context": "a",
+                      "metadata": {
+                        "type": "dom-import",
+                        "sourceUrl": "https://www.pen.dev/design/construction-page",
+                        "tag": "a",
+                        "href": "/"
+                      },
+                      "width": 172.29,
+                      "height": 48,
+                      "fill": "#141414",
+                      "cornerRadius": 9999,
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000014",
+                        "offset": {
+                          "x": 0,
+                          "y": 1
+                        },
+                        "blur": 1
+                      },
+                      "gap": 8,
+                      "padding": [
+                        0,
+                        24
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "MwUEl",
+                          "name": "svg",
+                          "context": "House - svg",
+                          "clip": true,
+                          "width": 16,
+                          "height": 16,
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "path",
+                              "id": "qQCG5",
+                              "x": 6,
+                              "y": 8,
+                              "geometry": "M6 9l0-8c0-0.55229-0.44771-1-1-1l-4 0c-0.55229 0-1 0.44771-1 1l0 8",
+                              "width": 4,
+                              "height": 6,
+                              "stroke": "#FFF",
+                              "strokeWidth": 1.3333333333333333,
+                              "strokeLinejoin": "round",
+                              "strokeLinecap": "round"
+                            },
+                            {
+                              "type": "path",
+                              "id": "gieSR",
+                              "x": 2,
+                              "y": 1.3330136934916177,
+                              "geometry": "M0 8.00048c-0.00014-0.58887 0.25924-1.14788 0.709-1.528l7-6c0.74539-0.62997 1.83661-0.62997 2.582 0l7 6c0.44976 0.38012 0.70914 0.93913 0.709 1.528l0 9c0 1.10457-0.89543 2-2 2l-14 0c-1.10457 0-2-0.89543-2-2l0-9z",
+                              "width": 12,
+                              "height": 12.666986306508381,
+                              "stroke": "#FFF",
+                              "strokeWidth": 1.3333333333333333,
+                              "strokeLinejoin": "round",
+                              "strokeLinecap": "round"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "dvcOE",
+                          "name": "Take Me Home",
+                          "fill": "#ffffff",
+                          "content": "Take Me Home",
+                          "lineHeight": 1.43,
+                          "textAlign": "center",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n1Qcu",
+                      "name": "button",
+                      "context": "button",
+                      "width": 129.71,
+                      "height": 48,
+                      "fill": "#ffffff",
+                      "cornerRadius": 9999,
+                      "stroke": "#0000001a",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
+                      "gap": 8,
+                      "padding": [
+                        1,
+                        25
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "zrnKV",
+                          "name": "svg",
+                          "context": "ArrowLeft - svg",
+                          "clip": true,
+                          "width": 16,
+                          "height": 16,
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "path",
+                              "id": "MRW07",
+                              "x": 3.333333333333333,
+                              "y": 3.333333333333333,
+                              "geometry": "M7 14l-7-7 7-7m7 7l-14 0",
+                              "width": 9.333333333333332,
+                              "height": 9.333333333333332,
+                              "stroke": "#141414",
+                              "strokeWidth": 1.3333333333333333,
+                              "strokeLinejoin": "round",
+                              "strokeLinecap": "round"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "MPkFk",
+                          "name": "Go Back",
+                          "fill": "#141414",
+                          "content": "Go Back",
+                          "lineHeight": 1.43,
+                          "textAlign": "center",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fileToken": "7ef3b2d7-29d6-4104-b6d7-5cf7f742a022"
+}

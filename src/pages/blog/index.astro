@@ -1,25 +1,21 @@
 ---
 import "./style.css";
+import Footer from "../../components/Footer.astro";
+import BlogLayout from "../../layouts/BlogLayout.astro";
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Blogs</title>
-</head>
-<body>
-
-<div id="center">
-    <h1>Blogs</h1>
-    <div id="how-to-blog" class="blog">
-        <a href="how-to-blog/"><h2>Blogging Guide</h2></a>
-        <h3>A guide on how to make your own blog in alris' games.</h3>
-        <h4>12 &bull; 9 &bull; 2026 | Alris Dhanwani</h4>
+<BlogLayout title="Blogs" description="Thoughts, guides, and updates from the alris games universe">
+    <div class="blog-grid">
+        <article class="blog-card">
+            <h2><a href="how-to-blog/">Blogging Guide</a></h2>
+            <div class="blog-meta">12 &bull; 9 &bull; 2026 | Alris Dhanwani</div>
+            <p class="blog-excerpt">A comprehensive guide on how to create and submit your own blog to alris' games. Covers requirements, accepted formats, submission process, and examples.</p>
+            <a href="how-to-blog/" class="read-more">Read more →</a>
+        </article>
+        <article class="blog-card">
+            <h2><a href="why-astro/">Why Astro</a></h2>
+            <div class="blog-meta">10 &bull; 11 &bull; 2026 | Alris Dhanwani</div>
+            <p class="blog-excerpt">Why Alris Games migrated from vanilla HTML/JS to Astro. Covers benefits like reusable components, faster builds, and easier contributor onboarding.</p>
+            <a href="why-astro/" class="read-more">Read more →</a>
+        </article>
     </div>
-    <footer class="footer">
-        <p id="copyRight" style="font-family: 'JetBrains Mono',monospace;">&copy; 2026 Alris Dhanwani | Apache 2.0</p>
-        <a href="../index.html" id="buh">Return to homepage</a>
-    </footer>
-</div>
-</body>
-</html>
+</BlogLayout>

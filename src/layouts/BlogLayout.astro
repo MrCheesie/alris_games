@@ -1,0 +1,36 @@
+---
+import "../pages/blog/style.css";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+</head>
+<body>
+<div id="center">
+    <article class="blog-post">
+        <header>
+            <h1>{title}</h1>
+            {description && <p class="post-meta">{description}</p>}
+        </header>
+
+        <div class="post-content">
+            <slot />
+        </div>
+    </article>
+
+    <Footer homeUrl="../../index.html" />
+</div>
+</body>
+</html>

@@ -2,7 +2,7 @@ import { Tldraw } from 'tldraw'
 import 'tldraw/tldraw.css'
 import './TlDraw.css';
 
-const LICENSE_KEY: String = "tldraw-2026-11-14/WyJRNnBMeVh2VyIsWyIqIl0sMTYsIjIwMjYtMTEtMTQiXQ.jZ8yka9PZ1CwEy0gWghBxi9EZoS7rxSuebsjtee+XA+cQVE58Y5sKDYuJv+eTM5tuTBxIWtdmqC+2PxINY++4w";
+const LICENSE_KEY: String = "tldraw-alris-dhanwani-2027-11-02/WyJka0JSY1V0WiIsWyIqLm1yY2hlZXNpZS5naXRodWIuaW8iXSw3MywiMjAyNy0xMS0wMiJd.JqGt37UcG95A8eMypq3wC/n25udjAaev/a4UI8c81lDmE9pErjP+/xXqWAhIuouo/PoO/l6p5moFinZ/Jq7WJw";
 
 export default function App() {
 	return (

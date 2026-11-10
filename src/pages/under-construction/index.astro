@@ -1,0 +1,717 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Under Construction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet" />
+  <style is:inline>
+    *, ::before, ::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #010101;
+      overflow: hidden;
+    }
+    .uc-canvas { transform-origin: center center; will-change: transform; }
+    .uc-stage { will-change: transform; }
+    .uc-stage.shake { animation: ucShake .6s ease-in-out; }
+    .uc-sound {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 50;
+      border: 1px solid #333;
+      background: #111;
+      color: #f1f1f1;
+      font-size: 18px;
+      line-height: 1;
+      padding: 10px 12px;
+      border-radius: 9999px;
+      cursor: pointer;
+      opacity: .75;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+    .uc-sound:hover { opacity: 1; transform: scale(1.08); }
+
+    @keyframes ucShake {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      12% { transform: translate(-10px, 6px) rotate(-0.8deg); }
+      25% { transform: translate(12px, -8px) rotate(1deg); }
+      38% { transform: translate(-8px, -5px) rotate(-0.6deg); }
+      50% { transform: translate(14px, 7px) rotate(1.2deg); }
+      62% { transform: translate(-12px, 4px) rotate(-1deg); }
+      75% { transform: translate(9px, -6px) rotate(0.7deg); }
+      88% { transform: translate(-6px, 8px) rotate(-0.5deg); }
+    }
+
+    .uc-text {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: ucTextIn 1.2s cubic-bezier(.2,.8,.2,1) .3s forwards;
+    }
+    .uc-crack path {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: ucDraw 2.4s ease-out .6s forwards;
+    }
+    .uc-zigzag path {
+      opacity: 0;
+      animation: ucFade 1.6s ease-out 1.4s forwards;
+    }
+    .uc-tape {
+      opacity: 0;
+      animation: ucTapeIn 1s ease-out forwards;
+    }
+    .uc-tape:nth-child(2) { animation-delay: .15s; }
+    .uc-tape:nth-child(3) { animation-delay: .3s; }
+
+    @keyframes ucTextIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes ucDraw {
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes ucFade {
+      to { opacity: 1; }
+    }
+    @keyframes ucTapeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .uc-text, .uc-crack path, .uc-zigzag path, .uc-tape {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        stroke-dashoffset: 0 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="uc-stage">
+<div class="uc-canvas" style="height: 600px; position: relative; width: 844.423px">
+      <div
+        data-pencil-name="Frame"
+        style="background-color: #010101; box-sizing: border-box; height: 600px; left: 0px; overflow: hidden; position: absolute; top: 0px; width: 800px"
+      >
+        <div
+          class="uc-tape" data-pencil-name="contruction tape"
+          style="box-sizing: border-box; height: 311.092px; left: -53.836px; position: absolute; top: 268.474px; width: 1025.251px; z-index: 0"
+        >
+          <div
+            style="background-color: #ffdd00ff; box-sizing: border-box; height: 62px; left: 0px; position: absolute; top: 250.92px; transform-origin: top left; transform: rotate(-13.948deg); width: 1041px; z-index: 0"
+          ></div>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 93.336px; overflow: visible; position: absolute; top: 221.026px; width: 65px; z-index: 1"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 372.836px; overflow: visible; position: absolute; top: 152.026px; width: 65px; z-index: 2"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 654.836px; overflow: visible; position: absolute; top: 83.026px; width: 65px; z-index: 3"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 189.836px; overflow: visible; position: absolute; top: 197.526px; width: 65px; z-index: 4"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 469.336px; overflow: visible; position: absolute; top: 128.526px; width: 65px; z-index: 5"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 751.336px; overflow: visible; position: absolute; top: 58.526px; width: 65px; z-index: 6"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 280.836px; overflow: visible; position: absolute; top: 174.526px; width: 65px; z-index: 7"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 560.336px; overflow: visible; position: absolute; top: 106.526px; width: 65px; z-index: 8"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 842.336px; overflow: visible; position: absolute; top: 36.526px; width: 65px; z-index: 9"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+        </div>
+        <div
+          class="uc-tape" data-pencil-name="contruction tape"
+          style="box-sizing: border-box; height: 311.092px; left: 36.342px; position: absolute; top: 133px; transform-origin: top left; transform: rotate(28.061deg); width: 1025.251px; z-index: 1"
+        >
+          <div
+            style="background-color: #ffdd00ff; box-sizing: border-box; height: 62px; left: 0px; position: absolute; top: 250.92px; transform-origin: top left; transform: rotate(-13.948deg); width: 1041px; z-index: 0"
+          ></div>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 93.336px; overflow: visible; position: absolute; top: 221.026px; width: 65px; z-index: 1"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 372.836px; overflow: visible; position: absolute; top: 152.026px; width: 65px; z-index: 2"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 654.836px; overflow: visible; position: absolute; top: 83.026px; width: 65px; z-index: 3"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 189.836px; overflow: visible; position: absolute; top: 197.526px; width: 65px; z-index: 4"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 469.336px; overflow: visible; position: absolute; top: 128.526px; width: 65px; z-index: 5"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 751.336px; overflow: visible; position: absolute; top: 58.526px; width: 65px; z-index: 6"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 280.836px; overflow: visible; position: absolute; top: 174.526px; width: 65px; z-index: 7"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 560.336px; overflow: visible; position: absolute; top: 106.526px; width: 65px; z-index: 8"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 842.336px; overflow: visible; position: absolute; top: 36.526px; width: 65px; z-index: 9"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+        </div>
+        <div
+          class="uc-tape" data-pencil-name="contruction tape"
+          style="box-sizing: border-box; height: 311.092px; left: -353px; position: absolute; top: 47.896px; transform-origin: top left; transform: rotate(-20.55deg); width: 1025.251px; z-index: 2"
+        >
+          <div
+            style="background-color: #ffdd00ff; box-sizing: border-box; height: 62px; left: 0px; position: absolute; top: 250.92px; transform-origin: top left; transform: rotate(-13.948deg); width: 1041px; z-index: 0"
+          ></div>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 93.336px; overflow: visible; position: absolute; top: 221.026px; width: 65px; z-index: 1"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 372.836px; overflow: visible; position: absolute; top: 152.026px; width: 65px; z-index: 2"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 654.836px; overflow: visible; position: absolute; top: 83.026px; width: 65px; z-index: 3"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 189.836px; overflow: visible; position: absolute; top: 197.526px; width: 65px; z-index: 4"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 469.336px; overflow: visible; position: absolute; top: 128.526px; width: 65px; z-index: 5"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 751.336px; overflow: visible; position: absolute; top: 58.526px; width: 65px; z-index: 6"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 280.836px; overflow: visible; position: absolute; top: 174.526px; width: 65px; z-index: 7"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 560.336px; overflow: visible; position: absolute; top: 106.526px; width: 65px; z-index: 8"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 -6.5 65 68"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="box-sizing: border-box; height: 68px; left: 842.336px; overflow: visible; position: absolute; top: 36.526px; width: 65px; z-index: 9"
+          >
+            <path d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z" fill="#000000ff"></path>
+            <path
+              d="M0 0l26.5-6.5 38.5 19-21.5 41-34 8 24-37.5-33.5-24z"
+              fill="none"
+              stroke="#000000"
+              stroke-width="1"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+        </div>
+        <div
+          class="uc-text" style='box-sizing: border-box; color: #f1f1f1; display: flex; flex-direction: column; font-family: "Fira Code", system-ui, sans-serif; font-size: 45px; font-style: normal; font-weight: 400; height: 181px; justify-content: center; left: 146px; letter-spacing: 0px; line-height: normal; position: absolute; text-align: center; top: 139px; width: 456px; z-index: 3'
+        >
+          Sorry, this page is still under construction
+        </div>
+        <svg
+          class="uc-zigzag" viewBox="0 -92 99 142.5"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+          style="box-sizing: border-box; height: 142.5px; left: 0px; overflow: visible; position: absolute; top: 197px; width: 99px; z-index: 4"
+        >
+          <path
+            d="M0 0l39-17.5-4-37.5 24.5-37m-36.5 81.679l30.5 50.821 32.5 10m-41.802-25.5l26.302-25 28.5 14m-62-50.25l29.5-5.75 19.5-16.5 6.5 7.5"
+            fill="none"
+            stroke="#f1f1f1"
+            stroke-width="1"
+            vector-effect="non-scaling-stroke"
+          ></path>
+        </svg>
+      </div>
+      <svg
+        class="uc-crack" data-pencil-name="crack"
+        viewBox="-136.5 -24 136.5 178"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style="box-sizing: border-box; height: 178px; left: 673.744px; overflow: visible; position: absolute; top: 264.41px; transform-origin: top left; transform: rotate(-106.49deg); width: 136.5px"
+      >
+        <path
+          d="M0 0l-63 68-56.5 0 18 38.5-13 47.5m23.25-86l36.75 33.5-8.5-7.748 44-17.752m-23.618-30l-36.882-49.5 16.5 22.145 20.382-42.645m-58.882 92l-22-44 14.5-10-27.5-9"
+          fill="none"
+          stroke="#f1f1f1"
+          stroke-width="1"
+          stroke-linecap="square"
+          stroke-linejoin="bevel"
+          vector-effect="non-scaling-stroke"
+        ></path>
+      </svg>
+    </div>
+  </div>
+  <button class="uc-sound" type="button" aria-label="Toggle drilling sound">🔊</button>
+  <script is:inline>
+    (function () {
+      var canvas = document.querySelector('.uc-canvas');
+      var stage = document.querySelector('.uc-stage');
+      if (!canvas) return;
+      var tapes = Array.prototype.slice.call(document.querySelectorAll('.uc-tape'));
+      var baseTransforms = tapes.map(function (t) { return t.style.transform || ''; });
+
+      function fit() {
+        var sx = window.innerWidth / 844.423;
+        var sy = window.innerHeight / 600;
+        var s = Math.max(sx, sy);
+        canvas.style.transform = 'scale(' + s + ')';
+      }
+      fit();
+      window.addEventListener('resize', fit);
+
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Gentle drifting motion for the construction tapes.
+      if (!reduced) {
+        var start = performance.now();
+        function loop(now) {
+          var t = (now - start) / 1000;
+          tapes.forEach(function (tape, i) {
+            var dx = Math.sin(t * 0.6 + i * 1.7) * 18;
+            var dy = Math.cos(t * 0.4 + i * 2.1) * 6;
+            tape.style.transform = 'translate(' + dx + 'px,' + dy + 'px) ' + baseTransforms[i];
+          });
+          requestAnimationFrame(loop);
+        }
+        requestAnimationFrame(loop);
+
+        // Random shake bursts.
+        function scheduleShake() {
+          var delay = 4000 + Math.random() * 7000;
+          setTimeout(function () {
+            if (stage) {
+              stage.classList.add('shake');
+              setDrillActive(true);
+              setTimeout(function () {
+                stage.classList.remove('shake');
+                setDrillActive(false);
+              }, 650);
+            }
+            scheduleShake();
+          }, delay);
+        }
+        scheduleShake();
+      }
+
+      // Drilling sound: on by default, audible only during shakes.
+      var audioCtx = null;
+      var drillNodes = null;
+      var drillEnabled = true;
+      var btn = document.querySelector('.uc-sound');
+
+      function makeNoiseBuffer(ctx, seconds) {
+        var size = ctx.sampleRate * seconds;
+        var buffer = ctx.createBuffer(1, size, ctx.sampleRate);
+        var data = buffer.getChannelData(0);
+        for (var i = 0; i < size; i++) data[i] = Math.random() * 2 - 1;
+        return buffer;
+      }
+
+      function ensureDrill() {
+        if (drillNodes) return drillNodes;
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        if (audioCtx.state === 'suspended') { try { audioCtx.resume(); } catch (e) {} }
+        var noise = audioCtx.createBufferSource();
+        noise.buffer = makeNoiseBuffer(audioCtx, 2);
+        noise.loop = true;
+        var filter = audioCtx.createBiquadFilter();
+        filter.type = 'lowpass';
+        filter.frequency.value = 1100;
+        filter.Q.value = 1.2;
+        var gain = audioCtx.createGain();
+        gain.gain.value = 0.0;
+        var lfo = audioCtx.createOscillator();
+        lfo.frequency.value = 13;
+        var lfoGain = audioCtx.createGain();
+        lfoGain.gain.value = 0.12;
+        lfo.connect(lfoGain);
+        lfoGain.connect(gain.gain);
+        var clatter = audioCtx.createOscillator();
+        clatter.type = 'square';
+        clatter.frequency.value = 42;
+        var clatterGain = audioCtx.createGain();
+        clatterGain.gain.value = 0.025;
+        clatter.connect(clatterGain);
+        clatterGain.connect(gain.gain);
+        noise.connect(filter);
+        filter.connect(gain);
+        gain.connect(audioCtx.destination);
+        noise.start();
+        lfo.start();
+        clatter.start();
+        drillNodes = { noise: noise, lfo: lfo, clatter: clatter, gain: gain };
+        return drillNodes;
+      }
+
+      function setDrillActive(active) {
+        if (!drillEnabled) active = false;
+        var nodes = ensureDrill();
+        if (!nodes || !audioCtx) return;
+        try {
+          if (audioCtx.state === 'suspended') audioCtx.resume();
+          var now = audioCtx.currentTime;
+          nodes.gain.gain.cancelScheduledValues(now);
+          nodes.gain.gain.setValueAtTime(nodes.gain.gain.value, now);
+          if (active) {
+            nodes.gain.gain.linearRampToValueAtTime(0.18, now + 0.12);
+          } else {
+            nodes.gain.gain.linearRampToValueAtTime(0.0, now + 0.18);
+          }
+        } catch (e) {}
+      }
+
+      // try to enable audio on load (may require interaction)
+      try { ensureDrill(); } catch (e) {}
+      // resume on first interaction
+      function resumeAudio() {
+        if (audioCtx && audioCtx.state === 'suspended') { try { audioCtx.resume(); } catch (e) {} }
+      }
+      window.addEventListener('click', resumeAudio, { once: true });
+      window.addEventListener('keydown', resumeAudio, { once: true });
+
+      if (btn) {
+        btn.textContent = drillEnabled ? '🔊' : '🔇';
+        btn.addEventListener('click', function () {
+          drillEnabled = !drillEnabled;
+          btn.textContent = drillEnabled ? '🔊' : '🔇';
+          if (!drillEnabled) setDrillActive(false);
+        });
+      }
+
+      // schedule shakes and tie sound to them
+      if (!reduced) {
+        // update shake scheduling to call setDrillActive
+        var origSchedule = null;
+      }
+    })();
+  </script>
+</body>
+</html>
