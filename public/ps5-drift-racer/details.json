@@ -1,0 +1,7 @@
+{
+  "name": "Vraj's PS5 Drift Racer",
+  "author": "Vraj Shah",
+  "date": "2026-10-04",
+  "framework": "HTML5 Canvas / Vanilla JS",
+  "description": "High-octane arcade drift racing game with native PS5 DualSense controller support, analog triggers, haptic rumble, and high-speed drift physics."
+}
