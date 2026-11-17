@@ -1,0 +1,86 @@
+---
+import "./tiers.css";
+import Footer from "../../components/Footer.astro";
+// images import
+import toggleLayoutImg from "./toggle_layout.png";
+import exportImg from "./export.png";
+import plusImg from "./plus.png";
+import resetImg from "./reset.png";
+import importImg from "./import.png";
+import binOpenImg from "./trash_bin_open.png";
+import binImg from "./trash_bin.png";
+---
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Offline TierMaker</title>
+  </head>
+  <body>
+    <div class='title'>
+        <label class='title-label' for='title-input'>My TierList</label>
+        <input type='text' id='title-input' />
+    </div>
+    <section class='main-content'>
+        <div class='tierlist'>
+        </div>
+        <div class='toggleable-container'>
+            <div class='bottom-container'>
+                <div class='buttons-container'>
+                    <div class='button'>
+                        <label for='load-img-input'>
+                            <img src={plusImg.src} title='Add images'/>
+                        </label>
+                        <input id='load-img-input' type='file' accept='image/*' multiple/>
+                    </div>
+                    <div class='button'>
+                        <label for='reset-list-input'>
+                            <img src={resetImg.src} title='Reset list'>
+                        </label>
+                        <input id='reset-list-input' type='button' />
+                    </div>
+                    <div class='button'>
+                        <label for='export-input'>
+                            <img src={exportImg.src} title='Export'>
+                        </label>
+                        <input id='export-input' type='button' />
+                    </div>
+                    <div class='button'>
+                        <label for='import-input'>
+                            <img src={importImg.src} title='Import'/>
+                        </label>
+                        <input id='import-input' type='file' accept='.json' multiple/>
+                    </div>
+                </div>
+                <section class='images'></section>
+            </div>
+            <p class='hint'>Hint: you can paste an image into this page to have it show up in the image list.</p>
+        </div>
+    </section>
+    <p class='hint'><a href="./mobile/" style="color:#8cf;">Mobile-friendly version</a> (tap to select/place instead of drag-and-drop).</p>
+    <div class="top-container">
+        <img id='trash' src={binImg.src} data-bin-open={binOpenImg.src} data-bin-closed={binImg.src} title='Delete image (drag it over here)'>
+        <div class='button'>
+            <label for='toggle-layout'>
+                <img src={toggleLayoutImg.src} title='Toggle Layout'/>
+            </label>
+            <input id='toggle-layout' type='button'/>
+        </div>
+    </div>
+
+    <!-- Image enlargement modal -->
+    <div id="imageModal" class="image-modal" role="dialog" aria-modal="true" aria-label="Enlarged image">
+      <button id="closeModal" class="close-modal" aria-label="Close enlarged image">
+        &times;
+      </button>
+      <img id="modalImage" src="" alt=""/>
+      <div class='title' id="modalCaption">
+          <label class='title-label' id='modalCaptionLabel' for='modalCaptionInput'>(untitled)</label>
+          <input type='text' id='modalCaptionInput' />
+      </div>
+    </div>
+    <Footer />
+    <script>
+      import "../../scripts/tiers.js";
+    </script>
+  </body>
+</html>
