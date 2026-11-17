@@ -24,7 +24,9 @@ const gamesList: Array<string> = [
     "../blog/",
     "../fakeNotifs/",
     "../dino/",
-    "../whiteboard/"
+    "../whiteboard/",
+    "../tierlist",
+    `${baseUrl}/ps5-drift-racer`
 
 ]
 
@@ -43,7 +45,7 @@ function mysteryRedirect(list: Array<string>): void {
     const randomChoice: string = gamesList[randomIndex];
 
     console.info("mysteryRedirect clicked"); // log click
-    
+
     window.location.href = randomChoice;
 
 }

@@ -18,6 +18,7 @@ import notifs from "../fakeNotifs/details.json";
 import dino from "../dino/details.json";
 import wb from "../whiteboard/details.json";
 import bombEater from "../bomb_eater/details.json";
+import tierList from "../tierlist/details.json";
 
 // The docs site is now a Starlight content collection, so its details.json no
 // longer sits in src/content/docs/. It lives outside the content folder.
@@ -40,6 +41,7 @@ const pong: GameDetails = publicGameDetails("pong");
 const rtg: GameDetails = publicGameDetails("RTG");
 const aiHarness: GameDetails = publicGameDetails("AI-harness");
 const tag: GameDetails = publicGameDetails("tag");
+const vrajCar: GameDetails = publicGameDetails("ps5-drift-racer")
 
 ---
 <html lang="en">
@@ -175,6 +177,21 @@ const tag: GameDetails = publicGameDetails("tag");
                 <br>
                 <a href={`../dino/`} class="button">Game</a>
                 <a href={`../dino/scores`} class="button">Scores</a>
+            </li>
+        <br><hr><br>
+            <li id="tierList">
+                <h2>{tierList.name}</h2>
+                <p>{tierList.description}</p>
+                <br>
+                <a href={`../tierlist/`} class="button">Rank things</a>
+            </li>
+        <br><hr><br>
+            <li id="vrajGame">
+                <h2>{vrajCar.name}</h2>
+                <p>{vrajCar.description}</p>
+                <br>
+                <a href={`${base}/ps5-drift-racer`} class="button">Game</a>
+                <a href={`../under-construction`} class="button">Scores</a>
             </li>
         <br><hr><br>
         <li id="blogs">
